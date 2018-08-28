@@ -11,9 +11,12 @@ echo "int foo;" > gnut.cpp
 ${CXX-g++} -std=gnu++1z -c gnut.cpp
 res=$?
 rm -f gnut.*
-exit $res
-if test ${res} ; then
+echo My result $res
+if test x"${res}" = x ; then
+echo My result for z
 libsafeqp_la_CXXFLAGS += -std=gnu++1z
 else
-libsafeqp_la_CXXFLAGS += -std=gnu++1z
+echo My result for y
+libsafeqp_la_CXXFLAGS += -std=gnu++1y
 fi
+exit 0
