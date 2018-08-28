@@ -12,11 +12,14 @@ ${CXX-g++} -std=gnu++1z -c gnut.cpp
 res=$?
 rm -f gnut.*
 echo My result $res
-if test x"${res}" = x ; then
+if test "${res}" = 0 ; then
 echo My result for z
+#AC_SUBST([CXXFLAGS],[$(-std=gnu++1z)])
 libsafeqp_la_CXXFLAGS += -std=gnu++1z
 else
 echo My result for y
-libsafeqp_la_CXXFLAGS += -std=gnu++1y
+#AC_SUBST([AM_CXXFLAGS],[-std=gnu++1y])
+#libsafeqp_la_CXXFLAGS += -std=gnu++1y
+AM_CXXFLAGS += -std=gnu++1y
 fi
 exit 0
