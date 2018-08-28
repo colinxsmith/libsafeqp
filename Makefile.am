@@ -1,6 +1,6 @@
     ACLOCAL_AMFLAGS = -I m4
-    SUBDIRS = src libsafeqp
+    SUBDIRS = libsafeqp
 
-    include aminclude.am
+ #   include aminclude.am
 
     EXTRA_DIST = autogen.sh 
