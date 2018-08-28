@@ -14,6 +14,7 @@ BaseOptimise.cpp  dbdpert.cpp  dfindp.cpp    dlpprt.cpp   dqpcrsh.cpp  _dsmxmpc.
 bunchi.cpp        dbndalf.cpp  dgetlamd.cpp  dprtsol.cpp  dqpdump.cpp  dsmxmpdc.cpp  gunique.cpp       Omega.cpp       simplex.cpp\
 constant.cpp      dchkdat.cpp  dlpbgst.cpp   dqpchkp.cpp  dqpgrad.cpp  dtqadd.cpp    LP.cpp            Optclass.cpp    validate.cpp\
 daddcon.cpp       ddelcon.cpp  dlpcore.cpp   dqpcolr.cpp  dqpprt.cpp   eigen.cpp     modelprocess.cpp  orderutils.cpp  winsor.cpp
-    libsafeqp_la_CFLAGS = -I$(top_srcdir)/libsafeqp
-    libsafeqp_la_CXXFLAGS = -I$(top_srcdir)/libsafeqp
+    libsafeqp_la_CFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp
+    libsafeqp_la_CXXFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp
     libsafeqp_la_CXXFLAGS += -std=gnu++1z
+    libsafeqp_la_LDFLAGS = -lgomp
