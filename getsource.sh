@@ -8,3 +8,4 @@ cd libsafeqp
 rm constant.*
 genconst -x > constant.cpp
 genconst -h > constant.h
+mkdir m4 config
