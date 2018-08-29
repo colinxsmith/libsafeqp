@@ -4,19 +4,44 @@ AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_SRCDIR(libsafeqp)
 AC_CONFIG_MACRO_DIRS([m4])
 AM_INIT_AUTOMAKE
+AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_LIBTOOL
-AC_OUTPUT(Makefile libsafeqp/Makefile)
-echo "int foo;" > gnut.cpp
-${CXX-g++} -std=gnu++1z -c gnut.cpp
+echo "auto foo=17;" > gnut.cpp
+${CXX-"g++"} -c gnut.cpp
 res=$?
 rm -f gnut.*
+if test "${res}" = 1 ; then
+    echo My result for x
+    echo "auto foo=17;" > gnut.cpp
+    ${CXX-"g++"} -std=gnu++1z -c gnut.cpp
+    res=$?
+    rm -f gnut.*
+fi
 echo My result $res
 if test "${res}" = 0 ; then
-echo My result for z
-ac_save_CXXFLAGS+=-std=gnu++1z
+    AC_SUBST(MY_STD,-std=gnu++1z)
 else
-echo My result for y
-ac_save_CXXFLAGS+=-std=gnu++1y
+    echo My result for y
+    echo "auto foo=17;" > gnut.cpp
+    ${CXX-"g++"} -std=gnu++1y -c gnut.cpp
+    res=$?
+    rm -f gnut.*
+    if test "${res}" = 0 ; then
+        AC_SUBST(MY_STD,-std=gnu++1y)
+    else
+        echo My result for x
+        echo "auto foo=17;" > gnut.cpp
+        ${CXX-"g++"} -std=gnu++1x -c gnut.cpp
+        res=$?
+        rm -f gnut.*
+        if test "${res}" = 0 ; then
+            AC_SUBST(MY_STD,-std=gnu++1x)
+        else
+            exit 1
+        fi
+    fi
 fi
-exit 0
+echo $MY_STD
+AC_CONFIG_FILES(Makefile libsafeqp/Makefile)
+AC_OUTPUT
