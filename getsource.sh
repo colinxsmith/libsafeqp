@@ -6,8 +6,8 @@ do
 done
 cp $BASE/validate.h libsafeqp
 cp $BASE/dsmxainv.c libsafeqp
+mkdir m4 config
 cd libsafeqp
 rm constant.*
-mkdir m4 config
 genconst -x > constant.cpp
 genconst -h > constant.h
