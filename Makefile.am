@@ -9,3 +9,5 @@ licence:
 	make licence1 NOW=$(FINAL)
 testlib:
 	(export LD_LIBRARY_PATH=~/libsafeqp/inst/lib;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+testlibg:
+	(export LD_LIBRARY_PATH=~/libsafeqp/libsafeqp/.libs;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
