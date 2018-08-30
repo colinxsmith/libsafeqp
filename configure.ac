@@ -7,6 +7,12 @@ AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_LIBTOOL
+echo Host os is $host_os
+case $host_os in
+  cygwin* | mingw* | pw32* | cegcc*)
+    AC_SUBST(MY_DEF,-DMSDOSS)
+    ;;
+esac
 echo "auto foo=17;" > gnut.cpp
 ${CXX-"g++"} -c gnut.cpp
 res=$?
