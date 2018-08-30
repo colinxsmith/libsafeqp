@@ -7,3 +7,5 @@ licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp$(MY_DLL).0.0.0 `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 licence:
 	make licence1 NOW=$(FINAL)
+testlib:
+	(export LD_LIBRARY_PATH=~/libsafeqp/inst/lib;cd ~/safeqp;python -c "from safe import *; print version()")

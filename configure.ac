@@ -7,6 +7,8 @@ AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_LIBTOOL
+AC_PROG_AWK
+AC_PROG_SED
 echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
     AC_SUBST(MY_DLL,.dll)
