@@ -6,6 +6,6 @@ done
 cp ../safeqp/validate.h libsafeqp
 cd libsafeqp
 rm constant.*
+mkdir m4 config
 genconst -x > constant.cpp
 genconst -h > constant.h
-mkdir m4 config

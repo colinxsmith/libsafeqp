@@ -8,6 +8,12 @@ AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_LIBTOOL
 echo Host os is $host_os
+if test $shrext_cmds = ".dll" ; then
+    AC_SUBST(MY_DLL,.dll)
+else
+    AC_SUBST(MY_DLL,.so)
+fi
+echo shared lib endings $shrext_cmds
 case $host_os in
   cygwin* | mingw* | pw32* | cegcc*)
     AC_SUBST(MY_DEF,-DMSDOSS)
