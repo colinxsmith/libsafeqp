@@ -164,8 +164,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/compile \
 	$(top_srcdir)/config/install-sh $(top_srcdir)/config/ltmain.sh \
 	$(top_srcdir)/config/missing AUTHORS COPYING ChangeLog INSTALL \
 	NEWS README config/compile config/config.guess \
-	config/config.sub config/install-sh config/ltmain.sh \
-	config/missing
+	config/config.sub config/depcomp config/install-sh \
+	config/ltmain.sh config/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -802,8 +802,8 @@ uninstall-am:
 .PRECIOUS: Makefile
 
 licence1:
-	echo 'validas libsafeqp/.libs/libsafeqp$(MY_DLL).0.0.0 `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
+	echo 'validas libsafeqp/.libs/libsafeqp$(MY_DLL).0.0.0 `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 licence:
 	make licence1 NOW=$(FINAL)
 
