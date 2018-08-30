@@ -26,16 +26,16 @@ ${CXX-"g++"} -c gnut.cpp
 res=$?
 rm -f gnut.*
 if test "${res}" = 1 ; then
-    echo My result for x
+    echo My result for z
     echo "auto foo=17;" > gnut.cpp
     ${CXX-"g++"} -std=gnu++1z -c gnut.cpp
     res=$?
     rm -f gnut.*
+    if test "${res}" = 0 ; then
+        AC_SUBST(MY_STD,-std=gnu++1z)
+    fi
 fi
-echo My result $res
-if test "${res}" = 0 ; then
-    AC_SUBST(MY_STD,-std=gnu++1z)
-else
+if test "${res}" != 0 ; then
     echo My result for y
     echo "auto foo=17;" > gnut.cpp
     ${CXX-"g++"} -std=gnu++1y -c gnut.cpp
