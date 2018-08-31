@@ -12,9 +12,11 @@ testlib:
 testlibg:
 	(export LD_LIBRARY_PATH=~/libsafeqp/libsafeqp/.libs:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
 testlibD:
-	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/usr/p" > DEBIAN/md5sums)
+	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
 	(export LD_LIBRARY_PATH=~/libsafeqp/usr/local/lib:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
 dotdeb:
 	rm -rf safeqp
+	make install prefix=$$(pwd)/usr/local
 	tar cvf - DEBIAN/ usr/ | (mkdir safeqp;cd safeqp;tar xvf -)
+	make testlibD
 	dpkg-deb --build safeqp
