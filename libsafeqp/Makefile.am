@@ -9,7 +9,7 @@ daxpyvec.c  dgemm.c     dlarfb.c    dnegvec.c   drotvec.c   dsmx22ev.c  dsptrf.c
 dcopy.c     dgemv.c     dlarf.c     dnrm2.c     drtmxsol.c  dsmx22sr.c  dsptrs.c    dsytf2.c    idamaxv.c   lmitemwr.c  lmuvwrit.c\
 dcopyvec.c  dger.c      dlarfg.c    dnrm2vec.c  dscal.c     dsmxasrt.c  dsssq.c     dsytrf.c    iladlc.c    lmivwri.c   myreadfiddle.c\
 dcossint.c  dgerq2.c    dlarft.c    dormr2.c    dscalvec.c  dsmxaupt.c  dsssqvec.c  dtmxsolv.c  iladlr.c    lmivwrit.c  patternmin.c\
-anneal.cpp        dalloc.cpp   detagen.cpp   dlpcrsh.cpp  dqpcore.cpp  dqpsol.cpp    entropy.cpp       multistage.cpp\
+anneal.cpp        dalloc.cpp   detagen.cpp   dlpcrsh.cpp  dqpcore.cpp  dqpsol.cpp    entropy.cpp       multistage.cpp dsmxainv.c\
 BaseOptimise.cpp  dbdpert.cpp  dfindp.cpp    dlpprt.cpp   dqpcrsh.cpp  _dsmxmpc.cpp  GainLossVar.cpp   naive.cpp       Rounding.cpp\
 bunchi.cpp        dbndalf.cpp  dgetlamd.cpp  dprtsol.cpp  dqpdump.cpp  dsmxmpdc.cpp  gunique.cpp       Omega.cpp       simplex.cpp\
 constant.cpp      dchkdat.cpp  dlpbgst.cpp   dqpchkp.cpp  dqpgrad.cpp  dtqadd.cpp    LP.cpp            Optclass.cpp    validate.cpp\
