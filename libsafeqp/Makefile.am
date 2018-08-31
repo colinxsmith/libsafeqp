@@ -7,7 +7,7 @@ daddvec.c   delmgen.c   disamaxv.c  dlpgrad.c   drot.c      dsetvec.c   dsmxrcx.
 daxpy.c     denrm2v.c   dlapy2.c    dmxtrnsp.c  drotg.c     dsign.c     dspr.c      dswapvec.c  dzyprod.c   lmdvwrit.c  lmprint.c       xerbla.c\
 daxpyvec.c  dgemm.c     dlarfb.c    dnegvec.c   drotvec.c   dsmx22ev.c  dsptrf.c    dsyr.c      idamax.c    lmgdvwri.c  lmuvwri.c\
 dcopy.c     dgemv.c     dlarf.c     dnrm2.c     drtmxsol.c  dsmx22sr.c  dsptrs.c    dsytf2.c    idamaxv.c   lmitemwr.c  lmuvwrit.c\
-dcopyvec.c  dger.c      dlarfg.c    dnrm2vec.c  dscal.c     dsmxasrt.c  dsssq.c     dsytrf.c    iladlc.c    lmivwri.c   myreadfiddle.c\
+dcopyvec.c  dger.c      dlarfg.c    dnrm2vec.c  dscal.c     dsmxasrt.c  dsssq.c     dsytrf.c    iladlc.c    lmivwri.c   myreadfiddle.c dsmxainv.c\
 dcossint.c  dgerq2.c    dlarft.c    dormr2.c    dscalvec.c  dsmxaupt.c  dsssqvec.c  dtmxsolv.c  iladlr.c    lmivwrit.c  patternmin.c\
 anneal.cpp        dalloc.cpp   detagen.cpp   dlpcrsh.cpp  dqpcore.cpp  dqpsol.cpp    entropy.cpp       multistage.cpp dsmxainv.c\
 BaseOptimise.cpp  dbdpert.cpp  dfindp.cpp    dlpprt.cpp   dqpcrsh.cpp  _dsmxmpc.cpp  GainLossVar.cpp   naive.cpp       Rounding.cpp\
