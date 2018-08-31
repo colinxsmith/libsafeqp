@@ -11,3 +11,6 @@ cd libsafeqp
 rm constant.*
 genconst -x > constant.cpp
 genconst -h > constant.h
+
+#Investigate this
+#find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN/md5sums
