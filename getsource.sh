@@ -1,5 +1,5 @@
 #!/bin/bash
-BASE=../safeqp
+BASE=${1-"../safeqp"}
 for file in `(cd $BASE;make -f makelinux listsrc) | sed "/^for/d"`
 do
     cp $BASE/$file  libsafeqp
