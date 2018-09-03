@@ -13,6 +13,7 @@ echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
     AC_SUBST(MY_DLL,.dll)
     AC_SUBST(MY_no_undefined,-no-undefined)
+    AC_SUBST(MY_netapi32,-lnetapi32)
 else
     AC_SUBST(MY_DLL,.so)
 fi
