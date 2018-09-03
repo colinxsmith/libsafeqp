@@ -6,14 +6,13 @@ AC_CONFIG_MACRO_DIRS([m4])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_PROG_CXX
-dnl Make thing work on cygwin
-AC_LIBTOOL_WIN32_DLL
-AC_PROG_LIBTOOL
 AC_PROG_AWK
 AC_PROG_SED
+LT_INIT([win32-dll])
 echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
     AC_SUBST(MY_DLL,.dll)
+    AC_SUBST(MY_no_undefined,-no-undefined)
 else
     AC_SUBST(MY_DLL,.so)
 fi
