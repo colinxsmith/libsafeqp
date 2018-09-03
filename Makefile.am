@@ -11,6 +11,8 @@ testlib:
 	(export LD_LIBRARY_PATH=~/libsafeqp/inst/lib:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
 testlibg:
 	(export LD_LIBRARY_PATH=~/libsafeqp/libsafeqp/.libs:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+testlibr:
+	(export LD_LIBRARY_PATH=~/libsafeqp/RPM/SOURCES/libsafeqp-1:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
 testlibD:
 	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
 	(export LD_LIBRARY_PATH=~/libsafeqp/usr/local/lib:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
@@ -20,3 +22,9 @@ dotdeb:
 	tar cvf - DEBIAN/ usr/ | (mkdir safeqp;cd safeqp;tar xvf -)
 	make testlibD
 	dpkg-deb --build safeqp
+rpm:
+	make install prefix=$$(pwd)/usr/local
+	(cd usr/local/lib;tar cvf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xvf -;cd ..;tar cvzf libsafeqp.tgz libsafeqp-1/*;cp -p libsafeqp.tgz ~/rpmbuild/SOURCES)
+	make testlibr
+	(cd RPM;rpmbuild -ba SPECS/libsafeqp.spec)
+#	rpm -ivh libsafeqp-1-0.noarch.rpm # install step
