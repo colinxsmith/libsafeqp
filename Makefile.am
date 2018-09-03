@@ -24,7 +24,8 @@ dotdeb:
 	dpkg-deb --build safeqp
 rpm:
 	make install prefix=$$(pwd)/usr/local
-	(cd usr/local/lib;tar cvf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xvf -;cd ..;tar cvzf libsafeqp.tgz libsafeqp-1/*;cp -p libsafeqp.tgz ~/rpmbuild/SOURCES)
+	(cd usr/local/lib;tar cvf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xvf -;cd ..;tar cvzf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
-	(cd RPM;rpmbuild -ba SPECS/libsafeqp.spec)
-#	rpm -ivh libsafeqp-1-0.noarch.rpm # install step
+	(cp -pr RPM/SOURCES ~/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
+	sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
+	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")

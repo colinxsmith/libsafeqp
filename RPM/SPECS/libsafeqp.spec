@@ -16,17 +16,15 @@ BITA Optimiser
 %setup -q
 %build
 %install
-install -m 0755 -d $RPM_BUILD_ROOT/usr/local/lib/libsafeqp
-install -m 0755  libsafeqp.a $RPM_BUILD_ROOT/usr/local/lib/libsafeqp
-install -m 0755  libsafeqp.so $RPM_BUILD_ROOT/usr/local/lib/libsafeqp
-install -m 0755  libsafeqp.so.1 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp
-install -m 0755  libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp
+%{__install} -m 0755 -d $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1
+%{__install} -m 0755  libsafeqp.a $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1
+%{__install} -m 0755  libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1
+%{__ln_s} libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so 
+%{__ln_s} libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so.1 
 
 %files
-/usr/local/lib/libsafeqp
-/usr/local/lib/libsafeqp/libsafeqp.a
-/usr/local/lib/libsafeqp/libsafeqp.so
-/usr/local/lib/libsafeqp/libsafeqp.so.1
-/usr/local/lib/libsafeqp/libsafeqp.so.1.0.0
+/usr/local/lib/libsafeqp-1
+/usr/local/lib/libsafeqp-1/libsafeqp.a
+/usr/local/lib/libsafeqp-1/libsafeqp.so.1.0.0
 
 %changelog
