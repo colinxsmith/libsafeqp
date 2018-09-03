@@ -7,7 +7,7 @@ licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp$(MY_DLL) `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 licencec1:
 	echo 'validas libsafeqp/.libs/cygsafeqp*$(MY_DLL) `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
-licencec1:
+licencec:
 	make licencec1 NOW=$(FINAL)
 licence:
 	make licence1 NOW=$(FINAL)
