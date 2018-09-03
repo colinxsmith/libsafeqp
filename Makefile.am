@@ -5,11 +5,6 @@ FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==
 licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 	echo 'validas libsafeqp/.libs/*safeqp*$(MY_DLL) `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
-licencec1:
-	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
-	echo 'validas libsafeqp/.libs/cygsafeqp*$(MY_DLL) `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
-licencec:
-	make licencec1 NOW=$(FINAL)
 licence:
 	make licence1 NOW=$(FINAL)
 testlib:
