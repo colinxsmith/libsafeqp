@@ -32,5 +32,9 @@ BITA Optimiser
 /usr/local/lib/libsafeqp-1
 /usr/local/lib/libsafeqp-1/libsafeqp.a
 /usr/local/lib/libsafeqp-1/libsafeqp.so.1.0.0
+%post
+/sbin/ldconfig /usr/local/lib/libsafeqp-1
+%postun
+/sbin/ldconfig
 
 %changelog
