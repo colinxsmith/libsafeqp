@@ -1,6 +1,7 @@
 Name:           libsafeqp
 Version:        1
 Release:        0
+Epoch:          1
 Summary:        BITA Optimiser
 
 Group:          BITA
@@ -36,5 +37,6 @@ BITA Optimiser
 /sbin/ldconfig /usr/local/lib/libsafeqp-1
 %postun
 /sbin/ldconfig
-
 %changelog
+* Tue Sep  4 2018 Colin Smith <csmith@corfinancialgroup.com> 1.0.0
+- make debian and centos packages
