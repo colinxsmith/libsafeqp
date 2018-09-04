@@ -25,8 +25,8 @@ BITA Optimiser
 %{__rm} $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so.1 
 %{__ln_s} libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so 
 %{__ln_s} libsafeqp.so.1.0.0 $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so.1 
-uname -a > ~/rpm`date +-\%d-\%m-\%Y-\%T`
-ldd $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so >> ~/rpm`date +-\%d-\%m-\%Y-\%T`
+%{__uname} > ~/rpm`date +-\%d-\%m-\%Y-\%T`
+%{__ldd} $RPM_BUILD_ROOT/usr/local/lib/libsafeqp-1/libsafeqp.so >> ~/rpm`date +-\%d-\%m-\%Y-\%T`
 
 %files
 /usr/local/lib/libsafeqp-1
