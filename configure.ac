@@ -54,7 +54,8 @@ if test "${res}" != 0 ; then
         if test "${res}" = 0 ; then
             AC_SUBST(MY_STD,-std=gnu++1x)
         else
-            exit 1
+            AC_SUBST(MY_STD,-DNOGPP)
+            echo Cannot handle auto
         fi
     fi
 fi
