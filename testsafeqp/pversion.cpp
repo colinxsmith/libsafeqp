@@ -3,6 +3,6 @@
 int main()
 {
     char kk[300],*message=kk;
-    printf("%s\n",version(kk));
+    printf("%s\n",version(message));
     return 0;
 }
