@@ -9,9 +9,11 @@ AC_PROG_CC
 AC_PROG_CXX
 AC_PROG_AWK
 AC_PROG_SED
-LT_INIT([win32-dll])
+LT_INIT
+
 echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
+    LT_INIT([win32-dll])
     AC_SUBST(MY_DLL,.dll)
     AC_SUBST(MY_no_undefined,-no-undefined)
     AC_SUBST(MY_netapi32,-lnetapi32)
@@ -49,11 +51,11 @@ if test "${res}" != 0 ; then
     else
         echo My result for x
         echo "auto foo=17;" > gnut.cpp
-        ${CXX-"g++"} -std=c++11 -c gnut.cpp
+        ${CXX-"g++"} -std=c++0x -c gnut.cpp
         res=$?
         rm -f gnut.*
         if test "${res}" = 0 ; then
-            AC_SUBST(MY_STD,-std=c++11)
+            AC_SUBST(MY_STD,-std=c++0x)
         else
             AC_SUBST(MY_STD,-DNOGPP)
             echo Cannot handle auto
