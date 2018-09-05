@@ -1,4 +1,4 @@
-pversion_SOURCES = pversion.cpp
 bin_PROGRAMS = pversion
+pversion_SOURCES = pversion.cpp
 pversion_CXXFLAGS = -I ../libsafeqp
-pversion_LDADD= ../libsafeqp/.libs/libsafeqp$(MY_DLL)
+pversion_LDADD = ../libsafeqp/libsafeqp.la
