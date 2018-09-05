@@ -2,6 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_INIT(libsafeqp, 1.0)
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_SRCDIR(libsafeqp)
+AC_CONFIG_SRCDIR(testsafeqp)
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
@@ -60,5 +61,5 @@ if test "${res}" != 0 ; then
     fi
 fi
 echo $MY_STD
-AC_CONFIG_FILES(Makefile libsafeqp/Makefile)
+AC_CONFIG_FILES(Makefile testsafeqp/Makefile libsafeqp/Makefile)
 AC_OUTPUT

@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp
+SUBDIRS = libsafeqp testsafeqp
 EXTRA_DIST = autogen.sh 
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
@@ -8,14 +8,14 @@ licence1:
 licence:
 	make licence1 NOW=$(FINAL)
 testlib:
-	(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testsafeqp;ldd pversion;./pversion)
 testlibg:
-	(export LD_LIBRARY_PATH=$$(pwd)/libsafeqp/.libs;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=$$(pwd)/libsafeqp/.libs;cd testsafeqp;ldd pversion;./pversion)
 testlibr:
-	(export LD_LIBRARY_PATH=$$(pwd)/RPM/SOURCES/libsafeqp-1;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=$$(pwd)/RPM/SOURCES/libsafeqp-1;cd testsafeqp;ldd pversion;./pversion)
 testlibD:
 	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
-	(export LD_LIBRARY_PATH=$$(pwd)/usr/local/lib/libsafeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=$$(pwd)/usr/local/lib/libsafeqp;cd testsafeqp;ldd pversion;./pversion)
 dotdeb:
 	rm -rf safeqp
 	make install prefix=$$(pwd)/usr/local/lib/libsafeqp
@@ -32,5 +32,5 @@ rpm:
 installrpm:
 	make rpm
 	sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
-	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
-	(export LD_LIBRARY_PATH=;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd testsafeqp;ldd pversion;./pversion)
+	(export LD_LIBRARY_PATH=;cd testsafeqp;ldd pversion;./pversion)
