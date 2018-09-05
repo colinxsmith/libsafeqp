@@ -19,14 +19,14 @@ testlibD:
 dotdeb:
 	rm -rf safeqp
 	make install prefix=$$(pwd)/usr/local/lib/libsafeqp
-	(cd usr/local/lib/libsafeqp/lib;tar cvf - *) | (cd usr/local/lib/libsafeqp;tar xvf -)#put libs in correct directory
+	(cd usr/local/lib/libsafeqp/lib;tar cf - *) | (cd usr/local/lib/libsafeqp;tar xf -)#put libs in correct directory
 	rm -rf usr/local/lib/libsafeqp/lib
-	tar cvf - DEBIAN/ usr/ | (mkdir safeqp;cd safeqp;tar xvf -)
+	tar cf - DEBIAN/ usr/ | (mkdir safeqp;cd safeqp;tar xf -)
 	make testlibD
 	dpkg-deb --build safeqp
 rpm:
 	make install prefix=$$(pwd)/usr/local
-	(cd usr/local/lib;tar cvf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xvf -;cd ..;tar cvzf libsafeqp.tgz libsafeqp-1/*)
+	(cd usr/local/lib;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
 	(cp -pr RPM/SOURCES $$(pwd)/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
 installrpm:
