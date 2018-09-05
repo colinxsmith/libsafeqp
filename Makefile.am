@@ -32,5 +32,5 @@ rpm:
 installrpm:
 	make rpm
 	sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
-	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1:~/safeqp;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
+	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
 	(export LD_LIBRARY_PATH=;cd ~/safeqp;ldd _safe.so;python -c "from safe import *; print version()")
