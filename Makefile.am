@@ -17,13 +17,14 @@ testlibD:
 	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
 	(export LD_LIBRARY_PATH=$$(pwd)/usr/local/lib/libsafeqp;cd testsafeqp/.libs;ldd pversion;./pversion)
 dotdeb:
-	rm -rf safeqp
+	rm -rf libsafeqp-d usr
 	make install prefix=$$(pwd)/usr/local/lib/libsafeqp
 	(cd usr/local/lib/libsafeqp/lib;tar cf - *) | (cd usr/local/lib/libsafeqp;tar xf -)#put libs in correct directory
 	rm -rf usr/local/lib/libsafeqp/lib
-	tar cf - DEBIAN/ usr/ | (mkdir safeqp;cd safeqp;tar xf -)
+	rm -rf usr/local/lib/libsafeqp/bin
+	tar cf - DEBIAN/ usr/ | (mkdir libsafeqp-d;cd libsafeqp-d;tar xf -)
 	make testlibD
-	dpkg-deb --build safeqp
+	dpkg-deb --build libsafeqp-d
 rpm:
 	make install prefix=$$(pwd)/usr/local
 	(cd usr/local/lib;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)

@@ -49,11 +49,11 @@ if test "${res}" != 0 ; then
     else
         echo My result for x
         echo "auto foo=17;" > gnut.cpp
-        ${CXX-"g++"} -std=gnu++1x -c gnut.cpp
+        ${CXX-"g++"} -std=c++11 -c gnut.cpp
         res=$?
         rm -f gnut.*
         if test "${res}" = 0 ; then
-            AC_SUBST(MY_STD,-std=gnu++1x)
+            AC_SUBST(MY_STD,-std=c++11)
         else
             AC_SUBST(MY_STD,-DNOGPP)
             echo Cannot handle auto
