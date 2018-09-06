@@ -10,10 +10,9 @@ AC_PROG_CXX
 AC_PROG_AWK
 AC_PROG_SED
 LT_INIT
-
 echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
-    LT_INIT([win32-dll])
+    AC_LIBTOOL_WIN32_DLL
     AC_SUBST(MY_DLL,.dll)
     AC_SUBST(MY_no_undefined,-no-undefined)
     AC_SUBST(MY_netapi32,-lnetapi32)
