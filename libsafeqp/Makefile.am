@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libsafeqp.la
-libsafeqp_la_SOURCES = QNewt.cpp Crash.c     ddmxmulv.c  dgerqf.c    dlasyf.c    dormrq.c    dsccopy.c   dsmxavop.c  dsub.c      dtrmm.c     itrwri.c    lmmdmxwr.c      sc_norm.c\
+libsafeqp_la_SOURCES = Crash.c QNewt.cpp ddmxmulv.c  dgerqf.c    dlasyf.c    dormrq.c    dsccopy.c   dsmxavop.c  dsub.c      dtrmm.c     itrwri.c    lmmdmxwr.c      sc_norm.c\
 dadd.c      ddot.c      dhrflct.c   dldlfact.c  dprotdiv.c  dsccopyv.c  dsmxfac.c   dsubvec.c   dtrmv.c     lmassrtf.c  lmmdsmxw.c      symbolic.c\
 daddc.c     ddotvec.c   didot.c     dlldatax.c  dpsprot.c   dscunitv.c  dsmxmpd.c   dsum.c      dxminmax.c  lmchfail.c  lmmdvwri.c      wdinky.c\
 daddcvec.c  delm.c      disamax.c   dlpdump.c   dqeqnsol.c  dset.c      dsmxmulv.c  dsumvec.c   dzero.c     lmdmxwri.c  lmmgdvwr.c      wqpexi.c\
@@ -17,6 +17,3 @@ daddcon.cpp       ddelcon.cpp  dlpcore.cpp   dqpcolr.cpp  dqpprt.cpp   eigen.cpp
 libsafeqp_la_CFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp $(MY_DEF)
 libsafeqp_la_CXXFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp $(MY_DEF) $(MY_STD)
 libsafeqp_la_LDFLAGS = -lgomp -version-info 1:0:0 $(MY_no_undefined) $(MY_netapi32)
-#if test 'x$(MY_no_undefined)' != 'x'; then
- #   libgsasl_la_LDFLAGS += $(MY_no_undefined)
-#fi

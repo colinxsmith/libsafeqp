@@ -13,16 +13,16 @@ LT_INIT
 echo Host os is $host_os
 if test $shrext_cmds = ".dll" ; then
     _LT_SET_OPTION([LT_INIT],[win32-dll])
-    AC_SUBST(MY_DLL,.dll)
-    AC_SUBST(MY_no_undefined,-no-undefined)
-    AC_SUBST(MY_netapi32,-lnetapi32)
+    AC_SUBST([MY_DLL],[.dll])
+    AC_SUBST([MY_no_undefined],[-no-undefined])
+    AC_SUBST([MY_netapi32],[-lnetapi32])
 else
-    AC_SUBST(MY_DLL,.so)
+    AC_SUBST([MY_DLL],[.so])
 fi
 echo shared lib endings $shrext_cmds
 case $host_os in
   cygwin* | mingw* | pw32* | cegcc*)
-    AC_SUBST(MY_DEF,-DMSDOSS)
+    AC_SUBST([MY_DEF],[-DMSDOSS])
     ;;
 esac
 echo "auto foo=17;" > gnut.cpp
@@ -36,7 +36,7 @@ if test "${res}" = 1 ; then
     res=$?
     rm -f gnut.*
     if test "${res}" = 0 ; then
-        AC_SUBST(MY_STD,-std=gnu++1z)
+        AC_SUBST([MY_STD],[-std=gnu++1z])
     fi
 fi
 if test "${res}" != 0 ; then
@@ -46,7 +46,7 @@ if test "${res}" != 0 ; then
     res=$?
     rm -f gnut.*
     if test "${res}" = 0 ; then
-        AC_SUBST(MY_STD,-std=gnu++1y)
+        AC_SUBST([MY_STD],[-std=gnu++1y])
     else
         echo My result for x
         echo "auto foo=17;" > gnut.cpp
@@ -54,9 +54,9 @@ if test "${res}" != 0 ; then
         res=$?
         rm -f gnut.*
         if test "${res}" = 0 ; then
-            AC_SUBST(MY_STD,-std=c++0x)
+            AC_SUBST([MY_STD],[-std=c++0x])
         else
-            AC_SUBST(MY_STD,-DNOGPP)
+            AC_SUBST([MY_STD],[-DNOGPP])
             echo Cannot handle auto
         fi
     fi
