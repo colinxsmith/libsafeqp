@@ -239,7 +239,7 @@ int main(int argc,char** argv)
 	time_t ltime;
 	time(&ltime);
 	printf( "Started; %s",(const char*)ctime(&ltime));
-	auto vv=1.0;//Default long value.
+	double vv=1.0;//Default long value.
 	char*vvv;
 	if(argv[argc-1][0]=='-')//Hack to allow us to change long value
 	{
@@ -664,6 +664,6 @@ int main(int argc,char** argv)
 	printf("Time taken for optimisation; %d seconds\n",t2);
 	time(&ltime);
 	printf( "Finished; %s",ctime(&ltime));
-	return 0;
+	return back;
 }
 
