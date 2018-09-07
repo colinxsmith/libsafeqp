@@ -44,4 +44,4 @@ installrpm:
 	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd testsafeqp/.libs;ldd pversion;./pversion)
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
 testsafe:
-	safeqp/safeqp data/costlog.log
+	safeqp/.libs/safeqp data/costlog.log
