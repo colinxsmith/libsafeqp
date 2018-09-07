@@ -11,13 +11,13 @@ testlib:
 	if test x'$(MY_DLL)' = x'.so'; then \
 		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testsafeqp/.libs;ldd pversion;./pversion) \
 	else \
-		(export PATH=$$(pwd)/inst/lib:$$(PATH);cd testsafeqp/.libs;ldd pversion;./pversion) \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd testsafeqp/.libs;ldd pversion;./pversion) \
 	fi
 testlibg:
 	if test x'$(MY_DLL)' = x'.so'; then \
 		(export LD_LIBRARY_PATH=$$(pwd)/libsafeqp/.libs;cd testsafeqp/.libs;ldd pversion;./pversion) \
 	else \
-		(export PATH=$$(pwd)/libsafeqp/.libs:$$(PATH);cd testsafeqp/.libs;ldd pversion;./pversion) \
+		(PATH=$$(pwd)/libsafeqp/.libs:$$PATH;cd testsafeqp/.libs;ldd pversion;./pversion) \
 	fi
 testlibr:
 	(export LD_LIBRARY_PATH=$$(pwd)/RPM/SOURCES/libsafeqp-1;cd testsafeqp/.libs;ldd pversion;./pversion)
