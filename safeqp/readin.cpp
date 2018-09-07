@@ -1,7 +1,9 @@
 template <class T> inline const T max(T a,T b){return (a<b)?b:a;}
 template <class T> inline const T min(T a,T b){return (a>b)?b:a;}
 template <class T> inline const T square(T a){return a*a;}
+#ifdef WIN32
 #pragma warning(disable:4786)
+#endif
 #include<map>
 #include<fstream>
 #include<vector>
@@ -237,7 +239,7 @@ int main(int argc,char** argv)
 	time_t ltime;
 	time(&ltime);
 	printf( "Started; %s",(const char*)ctime(&ltime));
-	double vv=1;//Default long value.
+	auto vv=1.0;//Default long value.
 	char*vvv;
 	if(argv[argc-1][0]=='-')//Hack to allow us to change long value
 	{
@@ -246,8 +248,8 @@ int main(int argc,char** argv)
 		vv=atof(vvv+1);
 		printf("%s Value %f\n",vvv+1,vv);
 	}
-	char* tracefile=getvar("TRACE","c:\\users\\colin\\safeqp\\newMirror2@omamquant_mikes_OptimserTrace.log");
-	char* costfile=getvar("COSTS","c:\\users\\colin\\safeqp\\newcosts1.log");
+	auto tracefile=getvar("TRACE","c:\\users\\colin\\safeqp\\newMirror2@omamquant_mikes_OptimserTrace.log");
+	auto costfile=getvar("COSTS","c:\\users\\colin\\safeqp\\newcosts1.log");
 
 	if(argc==2)
 	{
@@ -662,6 +664,6 @@ int main(int argc,char** argv)
 	printf("Time taken for optimisation; %d seconds\n",t2);
 	time(&ltime);
 	printf( "Finished; %s",ctime(&ltime));
-	return 1;
+	return 0;
 }
 
