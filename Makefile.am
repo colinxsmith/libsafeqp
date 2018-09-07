@@ -45,7 +45,7 @@ installrpm:
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
 testsafe:
 	if test x'$(MY_DLL)' = x'.so'; then \
-		(export LD_LIBRARY_PATH=$$(pwd)/usr/local/lib/libsafeqp;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
 	else \
-		(PATH=$$(pwd)/usr/local/lib/libsafeqp:$$PATH;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
 	fi
