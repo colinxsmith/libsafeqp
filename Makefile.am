@@ -6,7 +6,7 @@ licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 	for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
 	if ! test -h $$file; then \
-	lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+	echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
 	fi; \
 	done
 licence:
