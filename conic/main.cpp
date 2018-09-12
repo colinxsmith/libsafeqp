@@ -291,7 +291,7 @@ int main(int argc,char**argv,char**env)
 	time_t ltime;
 	time(&ltime);
 	printf("Started; %s",ctime(&ltime));
-	char* tracefile=getvar((const char*)"SOCP",(char*)"SOCPFile.txt");
+	char* tracefile=getvar((const char*)"SOCP",(char*)"conic.log");
 	char* logfile=getvar((const char*)"LOGSOCP",(char*)"checklog");
 
 	if(argc==2)
@@ -340,7 +340,7 @@ int main(int argc,char**argv,char**env)
 			if(vattribs[i].size()==temp.size()&&temp.find(vattribs[i])==0/*std::string::npos*/)
 			{
 				prevkey=i;nkeys++;
-				std::cout<<"££££££££££££££££££££££££  "<<line<<"  ££££££££££££££££££££££££"<<std::endl;
+				std::cout<<"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  "<<line<<"  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"<<std::endl;
 					if(getlongline(traceFile,line,temp))
 					{
 						if((il=temp.length())>0)
