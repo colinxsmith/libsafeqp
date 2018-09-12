@@ -7,7 +7,7 @@ licence1:
 	if test x'$(MY_DLL)' = x'.so'; then \
 	for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
 	if ! test -h $$file; then \
-	echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+	echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
 	fi; \
 	done \
 	else \
@@ -57,13 +57,13 @@ installrpm:
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
 testsafe:
 	if test x'$(MY_DLL)' = x'.so'; then \
-		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp; ./safeqp $$(pwd)/../data/costlog.log) \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
 	else \
-		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp; ./safeqp $$(pwd)/../data/costlog.log) \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
 	fi
 testUBS:
 	if test x'$(MY_DLL)' = x'.so'; then \
-		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU; ./safeqpU $$(pwd)/../data/PAS1.log) \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
 	else \
 		(PATH=$$(pwd)/inst/bin:$$PATH;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
 	fi
