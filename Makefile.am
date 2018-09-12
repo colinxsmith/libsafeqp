@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp testU
+SUBDIRS = libsafeqp testsafeqp safeqp testU conic
 EXTRA_DIST = autogen.sh 
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
@@ -34,7 +34,7 @@ testlibg:
 testlibr:
 	(export LD_LIBRARY_PATH=$$(pwd)/RPM/SOURCES/libsafeqp-1;cd testsafeqp/.libs;ldd pversion;./pversion)
 testlibD:
-	(find . -type f ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
+	(find . -type f ! -regex '.*?bin.*' ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum | sed -n "/ usr/p" > DEBIAN/md5sums)
 	(export LD_LIBRARY_PATH=$$(pwd)/usr/local/lib/libsafeqp;cd testsafeqp/.libs;ldd pversion;./pversion)
 dotdeb:
 	rm -rf libsafeqp-d usr
@@ -66,4 +66,10 @@ testUBS:
 		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
 	else \
 		(PATH=$$(pwd)/inst/bin:$$PATH;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
+	fi
+testconic:
+	if test x'$(MY_DLL)' = x'.so'; then \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd conic/.libs; ./safeconic $$(pwd)/../../data/conic.log) \
+	else \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd conic/.libs; ./safeconic $$(pwd)/../../data/conic.log) \
 	fi
