@@ -4,6 +4,7 @@ AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_SRCDIR(libsafeqp)
 AC_CONFIG_SRCDIR(testsafeqp)
 AC_CONFIG_SRCDIR(safeqp)
+AC_CONFIG_SRCDIR(testU)
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
@@ -63,5 +64,5 @@ if test "${res}" != 0 ; then
     fi
 fi
 echo $MY_STD
-AC_CONFIG_FILES(Makefile testsafeqp/Makefile libsafeqp/Makefile safeqp/Makefile)
+AC_CONFIG_FILES(Makefile testsafeqp/Makefile libsafeqp/Makefile safeqp/Makefile testU/Makefile)
 AC_OUTPUT

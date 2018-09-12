@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp
+SUBDIRS = libsafeqp testsafeqp safeqp testU
 EXTRA_DIST = autogen.sh 
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
@@ -57,7 +57,13 @@ installrpm:
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
 testsafe:
 	if test x'$(MY_DLL)' = x'.so'; then \
-		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp; ./safeqp $$(pwd)/../data/costlog.log) \
 	else \
-		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp; ./safeqp $$(pwd)/../../data/costlog.log) \
+	fi
+testUBS:
+	if test x'$(MY_DLL)' = x'.so'; then \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU; ./safeqpU $$(pwd)/../data/PAS1.log) \
+	else \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
 	fi
