@@ -1,10 +1,10 @@
 lib_LTLIBRARIES = libsafeqp.la
-libsafeqp_la_SOURCES = Crash.c QNewt.cpp ddmxmulv.c  dgerqf.c    dlasyf.c    dormrq.c    dsccopy.c   dsmxavop.c  dsub.c      dtrmm.c     itrwri.c    lmmdmxwr.c      sc_norm.c\
+libsafeqp_la_SOURCES = Crash.c lmprint.c QNewt.cpp ddmxmulv.c  dgerqf.c    dlasyf.c    dormrq.c    dsccopy.c   dsmxavop.c  dsub.c      dtrmm.c     itrwri.c    lmmdmxwr.c      sc_norm.c\
 dadd.c      ddot.c      dhrflct.c   dldlfact.c  dprotdiv.c  dsccopyv.c  dsmxfac.c   dsubvec.c   dtrmv.c     lmassrtf.c  lmmdsmxw.c      symbolic.c\
 daddc.c     ddotvec.c   didot.c     dlldatax.c  dpsprot.c   dscunitv.c  dsmxmpd.c   dsum.c      dxminmax.c  lmchfail.c  lmmdvwri.c      wdinky.c\
 daddcvec.c  delm.c      disamax.c   dlpdump.c   dqeqnsol.c  dset.c      dsmxmulv.c  dsumvec.c   dzero.c     lmdmxwri.c  lmmgdvwr.c      wqpexi.c\
 daddvec.c   delmgen.c   disamaxv.c  dlpgrad.c   drot.c      dsetvec.c   dsmxrcx.c   dswap.c     dzerovec.c  lmdsmxwr.c  lmnamewr.c      wrexit.c\
-daxpy.c     denrm2v.c   dlapy2.c    dmxtrnsp.c  drotg.c     dsign.c     dspr.c      dswapvec.c  dzyprod.c   lmdvwrit.c  lmprint.c       xerbla.c\
+daxpy.c     denrm2v.c   dlapy2.c    dmxtrnsp.c  drotg.c     dsign.c     dspr.c      dswapvec.c  dzyprod.c   lmdvwrit.c  xerbla.c\
 daxpyvec.c  dgemm.c     dlarfb.c    dnegvec.c   drotvec.c   dsmx22ev.c  dsptrf.c    dsyr.c      idamax.c    lmgdvwri.c  lmuvwri.c\
 dcopy.c     dgemv.c     dlarf.c     dnrm2.c     drtmxsol.c  dsmx22sr.c  dsptrs.c    dsytf2.c    idamaxv.c   lmitemwr.c  lmuvwrit.c\
 dcopyvec.c  dger.c      dlarfg.c    dnrm2vec.c  dscal.c     dsmxasrt.c  dsssq.c     dsytrf.c    iladlc.c    lmivwri.c   myreadfiddle.c dsmxainv.c\
