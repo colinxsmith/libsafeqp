@@ -16,4 +16,4 @@ constant.cpp      dchkdat.cpp  dlpbgst.cpp   dqpchkp.cpp  dqpgrad.cpp  dtqadd.cp
 daddcon.cpp       ddelcon.cpp  dlpcore.cpp   dqpcolr.cpp  dqpprt.cpp   eigen.cpp     modelprocess.cpp  orderutils.cpp  winsor.cpp
 libsafeqp_la_CFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp $(MY_DEF)
 libsafeqp_la_CXXFLAGS = -I$(top_srcdir)/libsafeqp -fopenmp $(MY_DEF) $(MY_STD)
-libsafeqp_la_LDFLAGS = -lgomp -version-info 1:0:0 $(MY_no_undefined) $(MY_netapi32)
+libsafeqp_la_LDFLAGS = -lgomp -version-info 1:0:0 $(MY_no_undefined) $(MY_netapi32) $(MY_LDEF)
