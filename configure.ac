@@ -24,8 +24,16 @@ else
 fi
 echo shared lib endings $shrext_cmds
 case $host_os in
-  cygwin* | mingw* | pw32* | cegcc*)
+  cygwin* | pw32* | cegcc*)
     AC_SUBST([MY_DEF],[-DMSDOSS])
+    ;;
+esac
+case $host_os in
+  mingw*)
+    MY_DEF="-DMINGW32 -D__SYSNT__ -D__SYSNT64__ -DMYNOVIRT -DBITADIRECT"
+    AC_SUBST([MY_DEF])
+    MY_LDEF="-lwsock32 "
+    AC_SUBST([MY_LDEF])
     ;;
 esac
 echo "auto foo=17;" > gnut.cpp
