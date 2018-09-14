@@ -36,6 +36,22 @@ case $host_os in
     AC_SUBST([MY_LDEF])
     ;;
 esac
+echo "#include <sys/types.h>  
+ushort a=0; "> gnut.cpp
+${CC-"gcc"} -c gnut.cpp
+res=$?
+rm -f gnut.*
+if test "${res}" = 1 ; then
+    echo No ushort
+fi
+echo "#include <sys/types.h>  
+ulong a=0; " > gnut.cpp
+${CC-"gcc"} -c gnut.cpp
+res=$?
+rm -f gnut.*
+if test "${res}" = 1 ; then
+    echo No ulong
+fi
 echo "auto foo=17;" > gnut.cpp
 ${CXX-"g++"} -c gnut.cpp
 res=$?
