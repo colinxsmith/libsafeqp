@@ -15,7 +15,7 @@ template <typename T> inline const T square(T a){return a*a;}
 #include<string>
 #include<cstring>
 #include<cmath>
-#include<optimise.h>
+#include<ooptimise.h>
 //
 typedef std::vector<std::string> vstring;
 typedef std::vector<double> vdouble;
