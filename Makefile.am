@@ -61,6 +61,12 @@ testsafe:
 	else \
 		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
 	fi
+testETL:
+	if test x'$(MY_DLL)' = x'.so'; then \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp/.libs; ./ETL $$(pwd)/../../data/E1.log) \
+	else \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd safeqp/.libs; ./ETL $$(pwd)/../../data/E1.log) \
+	fi
 testUBS:
 	if test x'$(MY_DLL)' = x'.so'; then \
 		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
