@@ -240,6 +240,13 @@ short SOCPlsRobustlC(size_t n,size_t m,vector w,vector A,
 										vector bench,vector initial,
 										int signtest,int fast=0,int maxrobust=0,char*SOCPdump=0,
 										size_t ncomp=0,vector Composites=0,double mintrade=-1);
+short CvarOptimiseCR(size_t n, size_t tlen, double*DATA, size_t number_included, double CVar_averse, double getRisk,
+	char** names, vector w, size_t m, vector A, vector L, vector U, vector alpha, vector benchmark,
+	vector Q, double gamma, vector initial, double delta, long basket, long trades, int revise,
+	vector min_holding, vector min_trade, int m_LS, int Fully_Invested, double Rmin, double Rmax, int round, vector min_lot, vector size_lot, int*shake,
+	double LSValue, size_t nabs, vector Abs_A, size_t mabs, dimen* I_A,
+	vector Abs_U, double*ogamma, vector mask, int log,
+	char* logfile, long longbasket, long shortbasket, double LSValuel, vector Abs_L, int costs, vector buy, vector sell, int CVar_constraint, double CVarMin, double CVarMax, unsigned char relCvar);
 char*	SOCPlstestMessage(int ifail);
 int fix_covariancem(dimen n,vector QFIX);
 char* Return_Message(int ifail);
