@@ -440,7 +440,6 @@ int main(int argc, char **argv)
 	double delta = (double)vecmap["delta"][0];
 	vector buy = getvector(vecmap, (char *)"buy");
 	vector sell = getvector(vecmap, (char *)"sell");
-	double kappa = (double)vecmap["kappa"][0];
 	long basket = (long)vecmap["basket"][0];
 	long trades = (long)vecmap["trades"][0];
 	int revise = (int)vecmap["revise"][0];
@@ -462,7 +461,6 @@ int main(int argc, char **argv)
 	vector A_abs = getvector(vecmap, (char *)"Abs_A");
 	size_t mabs = (size_t)vecmap["mabs"][0];
 	vector I_Af = getvector(vecmap, (char *)"I_A");
-
 	std::valarray<dimen> I_A;
 	if (mabs)
 	{
@@ -473,14 +471,12 @@ int main(int argc, char **argv)
 		}
 	}
 
+
 	vector U_abs = getvector(vecmap, (char *)"Abs_U");
 	vector L_abs = getvector(vecmap, (char *)"Abs_L");
 	double CVarMin = (double)vecmap["CVarMin"][0];
 	double CVarMax = (double)vecmap["CVarMax"][0];
 	double ogamma = 0;
-	double ShortCostScale = (double)vecmap["ShortCostScale"][0];
-	int tradebuy = (int)vecmap["tradebuy"][0];
-	int tradesell = (int)vecmap["tradesell"][0];
 	int longbasket = (int)vecmap["longbasket"][0];
 	int shortbasket = (int)vecmap["shortbasket"][0];
 	vector mask = (vector)getvector(vecmap, (char *)"mask");
