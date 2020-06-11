@@ -323,7 +323,7 @@ int main(int argc, char **argv)
 	char line[line_len];
 	std::string attribs = (char *)"n tlen DATA number_included CVar_averse getRisk names m A L U alpha bench Q gamma initial delta basket trades revise min_holding min_trade ls full Rmin Rmax round min_lot size_lot LSValue nabs Abs_A mabs I_A Abs_U mask logfile longbasket shortbasket LSValuel Abs_L costs buy sell CVar_constraint CVarMin CVarMax relCvar log";
 	vstring vattribs;
-							vcharstar namesvec;
+	vcharstar namesvec;
 	vdouble linedata;
 	vattribs.erase(vattribs.begin(), vattribs.end());
 	split(attribs, vattribs, " ");
@@ -347,6 +347,7 @@ int main(int argc, char **argv)
 				std::cout << "������������������������  " << line << "  ������������������������" << std::endl;
 				if (getlongline(traceFile, line, temp))
 				{
+					if(temp.find("------------")!=temp.npos)break;
 					if ((il = temp.length()) > 0)
 					{
 						if (vattribs[i].find("names")!=std::string::npos)
