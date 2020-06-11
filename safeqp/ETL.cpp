@@ -377,6 +377,7 @@ int main(int argc, char **argv)
 			{
 				if (getlongline(traceFile, line, temp))
 				{
+					if(temp.find("------------")!=temp.npos)break;
 					if (temp.length())
 					{
 						outfile = temp;
@@ -389,6 +390,7 @@ int main(int argc, char **argv)
 			{
 				if (getlongline(traceFile, line, temp))
 				{
+					if(temp.find("------------")!=temp.npos)break;
 					if (matchnumber_sp(line[0]))
 					{
 						if (il = temp.length())
@@ -416,6 +418,8 @@ int main(int argc, char **argv)
 			}
 		}
 		getlongline(traceFile, line, temp);
+		if (temp.find("------------") != temp.npos)
+			break;
 	}
 	traceFile.close();
 	size_t m = (size_t)vecmap["m"][0], ii;
