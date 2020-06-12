@@ -10,7 +10,7 @@ mkdir m4 config
 mkdir RPM/SOURCES
 mkdir RPM/SOURCES/libsafeqp-1
 cd libsafeqp
-rm constant.*
+rm constant.* dlldatax.c
 genconst -x > constant.cpp
 genconst -h > constant.h
 #Investigate this
