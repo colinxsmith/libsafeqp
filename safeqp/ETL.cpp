@@ -409,7 +409,9 @@ int main(int argc, char **argv)
 					if (matchnumber_sp(line[0]))
 					{
 						if (il = temp.length())
-						{
+	
+				{
+				std::cout << "������������������������  " << vattribs[prevkey] << " EXTRA ������������������������" << std::endl;
 							std::cout << "Line length " << il << std::endl;
 							split(temp, linedata, " "); //split has been written to work across more than one line
 							std::cout << "Number of items " << linedata.size() << std::endl;
