@@ -22,7 +22,7 @@ inline const T square(T a) { return a * a; }
 //
 typedef std::vector<std::string> vstring;
 typedef std::vector<double> vdouble;
-typedef std::vector<char*> vcharstar;
+typedef std::vector<char *> vcharstar;
 
 #define line_len 100000
 #define DBAD 1e66
@@ -272,9 +272,9 @@ vector getvector(std::map<std::string, vdouble> &vecmap, char *name)
 	else
 		return 0;
 }
-char** getvector(std::map<std::string, vcharstar> &vecmap, char *name)
+char **getvector(std::map<std::string, vcharstar> &vecmap, char *name)
 {
-	char** back;
+	char **back;
 	if (vecmap.find(name) != vecmap.end())
 	{
 		back = &vecmap[name].front();
@@ -321,6 +321,7 @@ int main(int argc, char **argv)
 	}
 
 	char line[line_len];
+	bool dashfinish = false;
 	std::string attribs = (char *)"n tlen DATA number_included CVar_averse getRisk names m A L U alpha bench Q gamma initial delta basket trades revise min_holding min_trade ls full Rmin Rmax round min_lot size_lot LSValue nabs Abs_A mabs I_A Abs_U mask logfile longbasket shortbasket LSValuel Abs_L costs buy sell CVar_constraint CVarMin CVarMax relCvar log";
 	vstring vattribs;
 	vcharstar namesvec;
@@ -347,10 +348,15 @@ int main(int argc, char **argv)
 				std::cout << "������������������������  " << line << "  ������������������������" << std::endl;
 				if (getlongline(traceFile, line, temp))
 				{
-					if(temp.find("------------")!=temp.npos)break;
+					if (temp.find("------------") != temp.npos)
+					{
+						printf("break at -1-----------------\n");
+						dashfinish = true;
+						break;
+					}
 					if ((il = temp.length()) > 0)
 					{
-						if (vattribs[i].find("names")!=std::string::npos)
+						if (vattribs[i].find("names") != std::string::npos)
 						{
 							std::cout << "Line length " << il << std::endl;
 							namesvec.erase(namesvec.begin(), namesvec.end()); //New data item to be set up so erase what's there before starting
@@ -377,7 +383,12 @@ int main(int argc, char **argv)
 			{
 				if (getlongline(traceFile, line, temp))
 				{
-					if(temp.find("------------")!=temp.npos)break;
+					if (temp.find("------------") != temp.npos)
+					{
+						printf("break at -2-----------------\n");
+						dashfinish = true;
+						break;
+					}
 					if (temp.length())
 					{
 						outfile = temp;
@@ -390,7 +401,11 @@ int main(int argc, char **argv)
 			{
 				if (getlongline(traceFile, line, temp))
 				{
-					if(temp.find("------------")!=temp.npos)break;
+					if (temp.find("------------") != temp.npos)
+					{
+						dashfinish = true;
+						break;
+					}
 					if (matchnumber_sp(line[0]))
 					{
 						if (il = temp.length())
@@ -417,9 +432,16 @@ int main(int argc, char **argv)
 					break;
 			}
 		}
+		if (dashfinish)
+		{
+			break;
+		}
 		getlongline(traceFile, line, temp);
 		if (temp.find("------------") != temp.npos)
-			break;
+		{
+			printf("break at -4-----------------\n");
+			dashfinish = true;
+		}
 	}
 	traceFile.close();
 	size_t m = (size_t)vecmap["m"][0], ii;
@@ -471,7 +493,6 @@ int main(int argc, char **argv)
 		}
 	}
 
-
 	vector U_abs = getvector(vecmap, (char *)"Abs_U");
 	vector L_abs = getvector(vecmap, (char *)"Abs_L");
 	double CVarMin = (double)vecmap["CVarMin"][0];
@@ -484,7 +505,6 @@ int main(int argc, char **argv)
 	std::valarray<double> w(n);
 	std::valarray<int> shake(n);
 	int log = 1;
-
 
 	short back = CvarOptimiseCR(n, tlen, DATA, number_included, CVar_averse, getRisk,
 								&namesvec[0], &w[0], m, A, L, U, alpha, bench,
