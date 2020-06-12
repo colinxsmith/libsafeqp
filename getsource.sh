@@ -2,10 +2,10 @@
 BASE=${1-"../safeqp"}
 for file in `(cd $BASE;make -f makelinux listsrc) | sed "/^for/d"`
 do
-    cp $BASE/$file  libsafeqp
+    cp -p $BASE/$file  libsafeqp
 done
-cp $BASE/validate.h libsafeqp
-cp $BASE/dsmxainv.c libsafeqp
+cp -p $BASE/validate.h libsafeqp
+cp -p $BASE/dsmxainv.c libsafeqp
 mkdir m4 config
 mkdir RPM/SOURCES
 mkdir RPM/SOURCES/libsafeqp-1
