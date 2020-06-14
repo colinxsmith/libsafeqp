@@ -509,7 +509,7 @@ int main(int argc, char **argv)
 	int log = 1;
 
 	short back = CvarOptimiseCR(n, tlen, DATA, number_included, CVar_averse, getRisk,
-								&namesvec[0], &w[0], m, A, L, U, alpha, bench,
+								namesvec.size()?&namesvec[0]:0, &w[0], m, A, L, U, alpha, bench,
 								Q, gamma, initial, delta, basket, trades, revise,
 								minhold, mintrade, ls, full, rmin, rmax, round, minlot, sizelot, &shake[0],
 								value, nabs, A_abs, mabs, mabs ? &I_A[0] : 0,
