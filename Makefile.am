@@ -69,9 +69,9 @@ testETL:
 	fi
 testUBS:
 	if test x'$(MY_DLL)' = x'.so'; then \
-		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
+		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd testU/.libs; paskey colincolin1;./safeqpU $$(pwd)/../../data/PAS1.log) \
 	else \
-		(PATH=$$(pwd)/inst/bin:$$PATH;cd testU/.libs; ./safeqpU $$(pwd)/../../data/PAS1.log) \
+		(PATH=$$(pwd)/inst/bin:$$PATH;cd testU/.libs; paskey colincolin1;./safeqpU $$(pwd)/../../data/PAS1.log) \
 	fi
 testconic:
 	if test x'$(MY_DLL)' = x'.so'; then \

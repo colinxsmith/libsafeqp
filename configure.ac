@@ -88,6 +88,7 @@ if test "${res}" != 0 ; then
         fi
     fi
 fi
+AC_SUBST([MY_STD],[$MY_DEF])
 echo $MY_STD
 AC_CONFIG_FILES(Makefile testsafeqp/Makefile libsafeqp/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
 AC_OUTPUT
