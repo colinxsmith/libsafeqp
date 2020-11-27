@@ -263,7 +263,7 @@ int main(int argc,char** argv)
 
 	clock_t t1=clock();
 #ifdef PAS
-	if(!UnlockBita("BITA_PAS_key","colincolin1"))
+	if(!UnlockBita((char*) "BITA_PAS_key",(char*) "colincolin1"))
 	{
 		std::cout<<"Error; bad PAS key"<<std::endl;
 		std::cerr<<"Error; bad PAS key"<<std::endl;
