@@ -21,6 +21,7 @@ if test $shrext_cmds = ".dll" ; then
     AC_SUBST([MY_netapi32],[-lnetapi32])
 else
     AC_SUBST([MY_DLL],[.so])
+    AC_SUBST([MY_DEF],[-Dsomethinghereforlinux])
 fi
 echo shared lib endings $shrext_cmds
 case $host_os in
