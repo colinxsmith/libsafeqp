@@ -9,6 +9,7 @@ cp -p $BASE/dsmxainv.c libsafeqp
 mkdir m4 config
 mkdir RPM/SOURCES
 mkdir RPM/SOURCES/libsafeqp-1
+(mac=$(uname  -a);sed -i "s|version 1|version 1 $mac|" libsafeqp/BaseOptimise.cpp)
 cd libsafeqp
 rm constant.* dlldatax.c
 genconst -x > constant.cpp
