@@ -19,6 +19,7 @@ if test $shrext_cmds = ".dll" ; then
     AC_SUBST([MY_DLL],[.dll])
     AC_SUBST([MY_no_undefined],[-no-undefined])
     AC_SUBST([MY_netapi32],[-lnetapi32])
+    AC_SUBST([MY_DEF],[-DsomethinghereforWindows])
 else
     AC_SUBST([MY_DLL],[.so])
     AC_SUBST([MY_DEF],[-Dsomethinghereforlinux])
@@ -26,13 +27,12 @@ fi
 echo shared lib endings $shrext_cmds
 case $host_os in
   cygwin* | pw32* | cegcc*)
-    AC_SUBST([MY_DEF],[-DMSDOSS])
+    MY_DEF+=" -DMSDOSS"
     ;;
 esac
 case $host_os in
   mingw*)
-    MY_DEF="-DMINGW32 -D__SYSNT__ -D__SYSNT64__ -DMYNOVIRT -DBITADIRECT"
-    AC_SUBST([MY_DEF])
+    MY_DEF+=" -DMINGW32 -D__SYSNT__ -D__SYSNT64__ -DMYNOVIRT -DBITADIRECT"
     MY_LDEF="-lwsock32 "
     AC_SUBST([MY_LDEF])
     ;;
@@ -89,7 +89,7 @@ if test "${res}" != 0 ; then
         fi
     fi
 fi
-AC_SUBST([MY_STD],[$MY_DEF])
 echo $MY_STD
+echo $MY_DEF
 AC_CONFIG_FILES(Makefile testsafeqp/Makefile libsafeqp/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
 AC_OUTPUT
