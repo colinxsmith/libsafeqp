@@ -11,6 +11,7 @@ mkdir RPM/SOURCES
 mkdir RPM/SOURCES/libsafeqp-1
 (mac=$(uname  -a);sed -i "s|version 1|version 1 $mac|" libsafeqp/BaseOptimise.cpp)
 cd libsafeqp
+sed -i "/define ALL/d" validate.cpp
 rm constant.* dlldatax.c
 genconst -x > constant.cpp
 genconst -h > constant.h
