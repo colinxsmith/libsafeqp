@@ -248,8 +248,8 @@ int main(int argc,char** argv)
 		vv=atof(vvv+1);
 		printf("%s Value %f\n",vvv+1,vv);
 	}
-	auto tracefile=getvar("TRACE","c:\\users\\colin\\safeqp\\newMirror2@omamquant_mikes_OptimserTrace.log");
-	auto costfile=getvar("COSTS","c:\\users\\colin\\safeqp\\newcosts1.log");
+	auto tracefile=getvar("TRACE",(char *)"c:\\users\\colin\\safeqp\\newMirror2@omamquant_mikes_OptimserTrace.log");
+	auto costfile=getvar("COSTS",(char *)"c:\\users\\colin\\safeqp\\newcosts1.log");
 
 	if(argc==2)
 	{
