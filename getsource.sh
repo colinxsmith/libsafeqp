@@ -6,8 +6,6 @@ do
 done
 cp -p $BASE/validate.h libsafeqp
 cp -p $BASE/dsmxainv.c libsafeqp
-sed -i "s/(\"/((char*)\"/" libsafeqp/BaseOptimise.cpp
-sed -i "s/,\"/,(char*)\"/g" libsafeqp/BaseOptimise.cpp
 mkdir m4 config
 mkdir RPM/SOURCES
 mkdir RPM/SOURCES/libsafeqp-1
