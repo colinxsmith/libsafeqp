@@ -514,7 +514,7 @@ int main(int argc, char **argv)
 								minhold, mintrade, ls, full, rmin, rmax, round, minlot, sizelot, &shake[0],
 								value, nabs, A_abs, mabs, mabs ? &I_A[0] : 0,
 								U_abs, &ogamma, mask, 2,
-								"logfile", longbasket, shortbasket, valueL, L_abs, costs, buy, sell, CVar_constraint, CVarMin, CVarMax, relCvar);
+								(char*)"logfile", longbasket, shortbasket, valueL, L_abs, costs, buy, sell, CVar_constraint, CVarMin, CVarMax, relCvar);
 
 	clock_t t2 = (clock() - t1) / CLOCKS_PER_SEC;
 	return 0;
