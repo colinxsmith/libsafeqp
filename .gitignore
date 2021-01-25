@@ -1,0 +1,12 @@
+*.o
+*.lo
+*.Plo
+*.Po
+*.so
+*.so.*
+output.*
+traces.*
+*.in
+*.a
+*.la
+*.orig
