@@ -1,0 +1,7 @@
+ git clone https://github.com/colinxsmith/libsafeqp
+ cd libsafeqp/
+ ./getsource.sh 
+ ./autogen.sh 
+ ./configure --pref=$(pwd)
+ make
+ make install
