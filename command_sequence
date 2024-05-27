@@ -1,3 +1,5 @@
+ #Modify this for docker
+
  git clone https://github.com/colinxsmith/libsafeqp
  cd libsafeqp/
  ./getsource.sh 
@@ -5,3 +7,18 @@
  ./configure --pref=$(pwd)
  make
  make install
+
+ #Need future and validas for licensing
+
+gcc ../safeqp/future.c ../safeqp/krypton.c -o future
+gcc ../safeqp/validas.c ../safeqp/krypton.c ../safeqp/guniqid.c -o validas
+
+ #Quick licences of use make licence FINAL=25/12/2024
+
+ cd lib
+(NOW=24/10/2024;validas libsafeqp.a $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;validas libsafeqp.so.1.0.0 $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+cd ..
+cd libsafeqp/.libs
+(NOW=24/10/2024;validas libsafeqp.a $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;validas libsafeqp.so.1.0.0 $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)

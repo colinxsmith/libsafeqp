@@ -43,7 +43,7 @@ dotdeb:
 	(cd usr/local/lib/libsafeqp/lib;tar cf - *) | (cd usr/local/lib/libsafeqp;tar xf -)#put libs in correct directory
 	rm -rf usr/local/lib/libsafeqp/lib
 	rm -rf usr/local/lib/libsafeqp/bin
-	tar cf - DEBIAN/ usr/ | (mkdir libsafeqp-d;cd libsafeqp-d;tar xf -)
+	tar cf - DEBIAN/ usr/ | (mkdir libsafeqp-d;chmod 755 libsafeqp-d;cd libsafeqp-d;tar xf -)
 	dpkg-deb --build libsafeqp-d
 rpm:
 	make install prefix=$$(pwd)/usr/local
