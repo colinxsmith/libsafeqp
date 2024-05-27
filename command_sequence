@@ -15,10 +15,7 @@ gcc ../safeqp/validas.c ../safeqp/krypton.c ../safeqp/guniqid.c -o validas
 
  #Quick licences of use make licence FINAL=25/12/2024
 
- cd lib
-(NOW=24/10/2024;validas libsafeqp.a $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
-(NOW=24/10/2024;validas libsafeqp.so.1.0.0 $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
-cd ..
-cd libsafeqp/.libs
-(NOW=24/10/2024;validas libsafeqp.a $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
-(NOW=24/10/2024;validas libsafeqp.so.1.0.0 $(future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;./validas libsafeqp/.libs/libsafeqp.so.1.0.0 $(./future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;./validas libsafeqp/.libs/libsafeqp.a $(./future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;./validas lib/libsafeqp.a $(./future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
+(NOW=24/10/2024;./validas lib/libsafeqp.so.1.0.0 $(./future -b 13101D54 $(date +%d/%m/%Y) $NOW) 1023)
