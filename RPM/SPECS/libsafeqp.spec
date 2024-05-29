@@ -10,6 +10,7 @@ License:        GPL
 URL:            www.bita.com
 Source0:        libsafeqp.tgz
 
+%global debug_package %{nil}
 %description
 BITA Optimiser
 
