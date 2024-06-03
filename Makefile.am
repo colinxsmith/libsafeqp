@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp testU conic
+SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava
 EXTRA_DIST = autogen.sh 
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
