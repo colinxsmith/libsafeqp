@@ -2639,7 +2639,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SimpleOpt(JNIEnv *jenv, jclass jcls, 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg21, i);
           arg21[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg21[len] = 0;
@@ -2739,9 +2739,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SimpleOpt(JNIEnv *jenv, jclass jcls, 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg21, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -2821,7 +2821,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_testchars(JNIEnv *jenv, jclass jcls, ji
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -2851,7 +2851,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_testchars(JNIEnv *jenv, jclass jcls, ji
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -2878,9 +2878,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_testchars(JNIEnv *jenv, jclass jcls, ji
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -2902,9 +2902,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_testchars(JNIEnv *jenv, jclass jcls, ji
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -3542,11 +3542,11 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_dumpvec(JNIEnv *jenv, jclass jcls, jlon
       arg3=0;//Because we cannot delete[] it later on;
     }
   }
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
   {
     //We musn't free this arg3 input=jarg3 arg=jarg3 result=$result
   }
-  if (arg4) jenv->ReleaseStringUTFChars(jarg4, (const char *)arg4);
+
 }
 
 
@@ -3584,7 +3584,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_dumpsvec(JNIEnv *jenv, jclass jcls, jlo
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -3616,21 +3616,21 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_dumpsvec(JNIEnv *jenv, jclass jcls, jlo
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
     }
   }
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
   {
     if(arg3){
       delete[] arg3;arg3=0;
     }
   }
-  if (arg4) jenv->ReleaseStringUTFChars(jarg4, (const char *)arg4);
+
 }
 
 
@@ -3980,7 +3980,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getBIMcov(JNIEnv *jenv, jclass jcls, js
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -4032,9 +4032,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getBIMcov(JNIEnv *jenv, jclass jcls, js
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -4048,8 +4048,8 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getBIMcov(JNIEnv *jenv, jclass jcls, js
       arg5=0;//Because we cannot delete[] it later on;
     }
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
+
   {
     if(arg3){
       delete[] arg3;arg3=0;
@@ -4091,9 +4091,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_procBIMcov(JNIEnv *jenv, jclass jcls, j
     if (!arg3) return ;
   }
   procBIMcov(arg1,arg2,arg3);
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
-  if (arg3) jenv->ReleaseStringUTFChars(jarg3, (const char *)arg3);
+
+
+
 }
 
 
@@ -4132,11 +4132,11 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_procBIMmod(JNIEnv *jenv, jclass jcls, j
     if (!arg5) return ;
   }
   procBIMmod(arg1,arg2,arg3,arg4,arg5);
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
-  if (arg3) jenv->ReleaseStringUTFChars(jarg3, (const char *)arg3);
-  if (arg4) jenv->ReleaseStringUTFChars(jarg4, (const char *)arg4);
-  if (arg5) jenv->ReleaseStringUTFChars(jarg5, (const char *)arg5);
+
+
+
+
+
 }
 
 
@@ -4869,7 +4869,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickout(JNIEnv *jenv, jclass jcls, jlon
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -4900,7 +4900,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickout(JNIEnv *jenv, jclass jcls, jlon
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -4959,9 +4959,9 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickout(JNIEnv *jenv, jclass jcls, jlon
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -4983,9 +4983,9 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickout(JNIEnv *jenv, jclass jcls, jlon
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -5067,7 +5067,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -5098,7 +5098,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -5128,7 +5128,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg5, i);
           arg5[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg5[len] = 0;
@@ -5173,9 +5173,9 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -5197,9 +5197,9 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -5221,9 +5221,9 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_pickoutstrings(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg5, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -5428,6 +5428,7 @@ SWIGEXPORT jstring JNICALL Java_safejavaJNI_expire_1date(JNIEnv *jenv, jclass jc
   }
   result = (char *)expire_date(arg1);
   if (result) jresult = jenv->NewStringUTF((const char *)result);
+
   delete [] result;
   return jresult;
 }
@@ -5445,6 +5446,7 @@ SWIGEXPORT jstring JNICALL Java_safejavaJNI_version(JNIEnv *jenv, jclass jcls) {
   }
   result = (char *)version(arg1);
   if (result) jresult = jenv->NewStringUTF((const char *)result);
+
   delete [] result;
   return jresult;
 }
@@ -5462,6 +5464,7 @@ SWIGEXPORT jstring JNICALL Java_safejavaJNI_cversion(JNIEnv *jenv, jclass jcls) 
   }
   result = (char *)cversion(arg1);
   if (result) jresult = jenv->NewStringUTF((const char *)result);
+
   delete [] result;
   return jresult;
 }
@@ -5479,6 +5482,7 @@ SWIGEXPORT jstring JNICALL Java_safejavaJNI_component_1key(JNIEnv *jenv, jclass 
   }
   result = (char *)component_key(arg1);
   if (result) jresult = jenv->NewStringUTF((const char *)result);
+
   delete [] result;
   return jresult;
 }
@@ -5606,7 +5610,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Extract_1Factor_1Information(JNIEnv *je
           
           js = (jstring) jenv->GetObjectArrayElement(jarg6, i);
           arg6[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg6[len] = 0;
@@ -5687,7 +5691,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Extract_1Factor_1Information(JNIEnv *je
           
           js = (jstring) jenv->GetObjectArrayElement(jarg9, i);
           arg9[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg9[len] = 0;
@@ -5751,9 +5755,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Extract_1Factor_1Information(JNIEnv *je
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg6, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -5812,9 +5816,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Extract_1Factor_1Information(JNIEnv *je
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg9, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -12235,7 +12239,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_resampfront(JNIEnv *jenv, jclass jcls, 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -12545,9 +12549,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_resampfront(JNIEnv *jenv, jclass jcls, 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -12783,7 +12787,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_resampfront(JNIEnv *jenv, jclass jcls, 
       delete[] arg18;arg18=0;
     }
   }
-  if (arg20) jenv->ReleaseStringUTFChars(jarg20, (const char *)arg20);
+
   {
     if(arg23){
       delete[] arg23;arg23=0;
@@ -13662,7 +13666,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_BITA_1dgemv(JNIEnv *jenv, jclass jcls, 
       arg10=0;//Because we cannot delete[] it later on;
     }
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   {
     if(arg5){
       delete[] arg5;arg5=0;
@@ -15331,7 +15335,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MCTR_1Beta(JNIEnv *jenv, jclass jcls, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg1, i);
           arg1[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg1[len] = 0;
@@ -15362,7 +15366,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MCTR_1Beta(JNIEnv *jenv, jclass jcls, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -15512,9 +15516,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MCTR_1Beta(JNIEnv *jenv, jclass jcls, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg1, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -15536,9 +15540,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MCTR_1Beta(JNIEnv *jenv, jclass jcls, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -16490,8 +16494,8 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_SOCPinfeasHomogtDUMP(JNIEnv *jenv, jcla
       delete[] arg11;arg11=0;
     }
   }
-  if (arg21) jenv->ReleaseStringUTFChars(jarg21, (const char *)arg21);
-  if (arg22) jenv->ReleaseStringUTFChars(jarg22, (const char *)arg22);
+
+
 }
 
 
@@ -16782,8 +16786,8 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SOCPinfeasHomogt(JNIEnv *jenv, jclass
       delete[] arg11;arg11=0;
     }
   }
-  if (arg21) jenv->ReleaseStringUTFChars(jarg21, (const char *)arg21);
-  if (arg22) jenv->ReleaseStringUTFChars(jarg22, (const char *)arg22);
+
+
   return jresult;
 }
 
@@ -19471,7 +19475,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SOCPlsRobustl(JNIEnv *jenv, jclass jc
       delete[] arg27;arg27=0;
     }
   }
-  if (arg31) jenv->ReleaseStringUTFChars(jarg31, (const char *)arg31);
+
   return jresult;
 }
 
@@ -20065,7 +20069,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SOCPlsRobustlC(JNIEnv *jenv, jclass j
   {
     //We musn't free this arg24 input=jarg24 arg=jarg24 result=$result
   }
-  if (arg28) jenv->ReleaseStringUTFChars(jarg28, (const char *)arg28);
+
   {
     //We musn't free this arg30 input=jarg30 arg=jarg30 result=$result
   }
@@ -20788,7 +20792,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_dsptrf(JNIEnv *jenv, jclass jcls, jstri
       arg4=0;
     } 
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   {
     if(arg3){
       delete[] arg3;arg3=0;
@@ -20891,7 +20895,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_dsptrs(JNIEnv *jenv, jclass jcls, jstri
       arg6=0;//Because we cannot delete[] it later on;
     }
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   {
     if(arg4){
       delete[] arg4;arg4=0;
@@ -20999,7 +21003,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_applyA(JNIEnv *jenv, jclass jcls, jstri
       arg6=0;//Because we cannot delete[] it later on;
     }
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   {
     if(arg4){
       delete[] arg4;arg4=0;
@@ -21266,7 +21270,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_ReorderNames(JNIEnv *jenv, jclass jcls,
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -21304,9 +21308,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_ReorderNames(JNIEnv *jenv, jclass jcls,
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -23664,7 +23668,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaOpt(JNIEnv *jenv, jclass jcls, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -23746,9 +23750,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaOpt(JNIEnv *jenv, jclass jcls, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -23854,7 +23858,7 @@ SWIGEXPORT jdouble JNICALL Java_safejavaJNI_FindR(JNIEnv *jenv, jclass jcls, jlo
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -23891,9 +23895,9 @@ SWIGEXPORT jdouble JNICALL Java_safejavaJNI_FindR(JNIEnv *jenv, jclass jcls, jlo
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -25113,7 +25117,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaSVOpt(JNIEnv *jenv, jclass jcls,
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -25195,9 +25199,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaSVOpt(JNIEnv *jenv, jclass jcls,
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -25341,7 +25345,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneral(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg5, i);
           arg5[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg5[len] = 0;
@@ -25530,9 +25534,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneral(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg5, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -25660,7 +25664,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneral(JNIEnv *jenv, jclass jcl
       delete[] arg14;arg14=0;
     }
   }
-  if (arg17) jenv->ReleaseStringUTFChars(jarg17, (const char *)arg17);
+
   return jresult;
 }
 
@@ -25749,7 +25753,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneralP(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg5, i);
           arg5[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg5[len] = 0;
@@ -25950,9 +25954,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneralP(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg5, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -26093,7 +26097,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OmegaGeneralP(JNIEnv *jenv, jclass jc
       delete[] arg15;arg15=0;
     }
   }
-  if (arg18) jenv->ReleaseStringUTFChars(jarg18, (const char *)arg18);
+
   return jresult;
 }
 
@@ -26180,7 +26184,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_OmegaGeneralPDump(JNIEnv *jenv, jclass 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg5, i);
           arg5[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg5[len] = 0;
@@ -26380,9 +26384,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_OmegaGeneralPDump(JNIEnv *jenv, jclass 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg5, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -26523,7 +26527,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_OmegaGeneralPDump(JNIEnv *jenv, jclass 
       delete[] arg15;arg15=0;
     }
   }
-  if (arg18) jenv->ReleaseStringUTFChars(jarg18, (const char *)arg18);
+
 }
 
 
@@ -27486,7 +27490,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_ThetaMulti(JNIEnv *jenv, jclass jcls, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg4, i);
           arg4[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg4[len] = 0;
@@ -27696,9 +27700,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_ThetaMulti(JNIEnv *jenv, jclass jcls, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg4, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -28439,7 +28443,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GeneralLongOpt(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -28595,9 +28599,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GeneralLongOpt(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -28908,7 +28912,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_LPhelper(JNIEnv *jenv, jclass jcls, j
       delete[] arg7;arg7=0;
     }
   }
-  if (arg9) jenv->ReleaseStringUTFChars(jarg9, (const char *)arg9);
+
   return jresult;
 }
 
@@ -29297,7 +29301,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_LPgeneral(JNIEnv *jenv, jclass jcls, 
       delete[] arg14;arg14=0;
     }
   }
-  if (arg21) jenv->ReleaseStringUTFChars(jarg21, (const char *)arg21);
+
   return jresult;
 }
 
@@ -29696,7 +29700,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_RobustOptDump(JNIEnv *jenv, jclass jcls
       delete[] arg23;arg23=0;
     }
   }
-  if (arg25) jenv->ReleaseStringUTFChars(jarg25, (const char *)arg25);
+
 }
 
 
@@ -30601,7 +30605,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GainLossOpt(JNIEnv *jenv, jclass jcls
           
           js = (jstring) jenv->GetObjectArrayElement(jarg14, i);
           arg14[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg14[len] = 0;
@@ -30755,9 +30759,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GainLossOpt(JNIEnv *jenv, jclass jcls
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg14, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -31007,7 +31011,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GainLossOptGen(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg14, i);
           arg14[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg14[len] = 0;
@@ -31161,9 +31165,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GainLossOptGen(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg14, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -31328,7 +31332,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimise(JNIEnv *jenv, jclass jcls,
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -31686,9 +31690,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimise(JNIEnv *jenv, jclass jcls,
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -31965,7 +31969,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimise(JNIEnv *jenv, jclass jcls,
       delete[] arg40;arg40=0;
     }
   }
-  if (arg42) jenv->ReleaseStringUTFChars(jarg42, (const char *)arg42);
+
   {
     if(arg46){
       delete[] arg46;arg46=0;
@@ -32056,7 +32060,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseR(JNIEnv *jenv, jclass jcls
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -32472,9 +32476,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseR(JNIEnv *jenv, jclass jcls
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -32793,7 +32797,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseR(JNIEnv *jenv, jclass jcls
       delete[] arg40;arg40=0;
     }
   }
-  if (arg42) jenv->ReleaseStringUTFChars(jarg42, (const char *)arg42);
+
   {
     if(arg46){
       delete[] arg46;arg46=0;
@@ -32898,7 +32902,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseRC(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -33344,9 +33348,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseRC(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -33691,7 +33695,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_GLOptimiseRC(JNIEnv *jenv, jclass jcl
       delete[] arg44;arg44=0;
     }
   }
-  if (arg46) jenv->ReleaseStringUTFChars(jarg46, (const char *)arg46);
+
   {
     if(arg50){
       delete[] arg50;arg50=0;
@@ -33749,7 +33753,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_GLProp(JNIEnv *jenv, jclass jcls, jlong
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -33891,9 +33895,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_GLProp(JNIEnv *jenv, jclass jcls, jlong
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -34152,7 +34156,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimise(JNIEnv *jenv, jclass jcls
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -34508,9 +34512,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimise(JNIEnv *jenv, jclass jcls
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -34787,7 +34791,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimise(JNIEnv *jenv, jclass jcls
       delete[] arg38;arg38=0;
     }
   }
-  if (arg40) jenv->ReleaseStringUTFChars(jarg40, (const char *)arg40);
+
   {
     if(arg44){
       delete[] arg44;arg44=0;
@@ -34870,7 +34874,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseg(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -35240,9 +35244,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseg(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -35527,7 +35531,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseg(JNIEnv *jenv, jclass jcl
       delete[] arg38;arg38=0;
     }
   }
-  if (arg40) jenv->ReleaseStringUTFChars(jarg40, (const char *)arg40);
+
   {
     if(arg44){
       delete[] arg44;arg44=0;
@@ -35621,7 +35625,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseR(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -36035,9 +36039,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseR(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -36356,7 +36360,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseR(JNIEnv *jenv, jclass jcl
       delete[] arg38;arg38=0;
     }
   }
-  if (arg40) jenv->ReleaseStringUTFChars(jarg40, (const char *)arg40);
+
   {
     if(arg44){
       delete[] arg44;arg44=0;
@@ -36459,7 +36463,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseRC(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -36903,9 +36907,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseRC(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -37250,7 +37254,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_MVLOptimiseRC(JNIEnv *jenv, jclass jc
       delete[] arg42;arg42=0;
     }
   }
-  if (arg44) jenv->ReleaseStringUTFChars(jarg44, (const char *)arg44);
+
   {
     if(arg48){
       delete[] arg48;arg48=0;
@@ -37456,7 +37460,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimise(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg7, i);
           arg7[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg7[len] = 0;
@@ -37829,9 +37833,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimise(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg7, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -38132,7 +38136,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimise(JNIEnv *jenv, jclass jcl
       delete[] arg39;arg39=0;
     }
   }
-  if (arg41) jenv->ReleaseStringUTFChars(jarg41, (const char *)arg41);
+
   {
     if(arg45){
       delete[] arg45;arg45=0;
@@ -38239,7 +38243,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseCR(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg7, i);
           arg7[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg7[len] = 0;
@@ -38645,9 +38649,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseCR(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg7, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -38964,7 +38968,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseCR(JNIEnv *jenv, jclass j
       delete[] arg39;arg39=0;
     }
   }
-  if (arg41) jenv->ReleaseStringUTFChars(jarg41, (const char *)arg41);
+
   {
     if(arg45){
       delete[] arg45;arg45=0;
@@ -39080,7 +39084,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseC(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg7, i);
           arg7[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg7[len] = 0;
@@ -39485,9 +39489,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseC(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg7, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -39804,7 +39808,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_CvarOptimiseC(JNIEnv *jenv, jclass jc
       delete[] arg39;arg39=0;
     }
   }
-  if (arg41) jenv->ReleaseStringUTFChars(jarg41, (const char *)arg41);
+
   {
     if(arg45){
       delete[] arg45;arg45=0;
@@ -40242,7 +40246,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimise(JNIEnv *jenv, jclass 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -40584,9 +40588,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimise(JNIEnv *jenv, jclass 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -40846,7 +40850,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimise(JNIEnv *jenv, jclass 
       delete[] arg30;arg30=0;
     }
   }
-  if (arg32) jenv->ReleaseStringUTFChars(jarg32, (const char *)arg32);
+
   {
     if(arg36){
       delete[] arg36;arg36=0;
@@ -40936,7 +40940,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimiseT(JNIEnv *jenv, jclass
           
           js = (jstring) jenv->GetObjectArrayElement(jarg2, i);
           arg2[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg2[len] = 0;
@@ -41278,9 +41282,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimiseT(JNIEnv *jenv, jclass
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg2, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -41540,7 +41544,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SemiVarOptimiseT(JNIEnv *jenv, jclass
       delete[] arg30;arg30=0;
     }
   }
-  if (arg32) jenv->ReleaseStringUTFChars(jarg32, (const char *)arg32);
+
   {
     if(arg36){
       delete[] arg36;arg36=0;
@@ -43336,8 +43340,8 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_SOCPportfolio(JNIEnv *jenv, jclass jc
       delete[] arg35;arg35=0;
     }
   }
-  if (arg36) jenv->ReleaseStringUTFChars(jarg36, (const char *)arg36);
-  if (arg38) jenv->ReleaseStringUTFChars(jarg38, (const char *)arg38);
+
+
   {
     if(arg39){
       delete[] arg39;arg39=0;
@@ -43378,7 +43382,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getmacaddress(JNIEnv *jenv, jclass jcls
     if (!arg1) return ;
   }
   getmacaddress(arg1);
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
 }
 
 
@@ -43461,7 +43465,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1Entropy(JNIEnv *jenv, jclas
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -43911,9 +43915,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1Entropy(JNIEnv *jenv, jclas
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -44282,7 +44286,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1Entropy(JNIEnv *jenv, jclas
       delete[] arg43;arg43=0;
     }
   }
-  if (arg45) jenv->ReleaseStringUTFChars(jarg45, (const char *)arg45);
+
   {
     if(arg51){
       delete[] arg51;arg51=0;
@@ -44333,7 +44337,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_EntropyUtility(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -44489,9 +44493,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_EntropyUtility(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -44699,7 +44703,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1EntropyU(JNIEnv *jenv, jcla
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -45149,9 +45153,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1EntropyU(JNIEnv *jenv, jcla
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -45520,7 +45524,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1EntropyU(JNIEnv *jenv, jcla
       delete[] arg43;arg43=0;
     }
   }
-  if (arg45) jenv->ReleaseStringUTFChars(jarg45, (const char *)arg45);
+
   {
     if(arg51){
       delete[] arg51;arg51=0;
@@ -45591,7 +45595,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OptimiseCrossEntropy(JNIEnv *jenv, jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -45932,9 +45936,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OptimiseCrossEntropy(JNIEnv *jenv, jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -46219,7 +46223,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_OptimiseCrossEntropy(JNIEnv *jenv, jc
       delete[] arg31;arg31=0;
     }
   }
-  if (arg33) jenv->ReleaseStringUTFChars(jarg33, (const char *)arg33);
+
   return jresult;
 }
 
@@ -47176,7 +47180,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Conic_1General(JNIEnv *jenv, jclass j
       delete[] arg12;arg12=0;
     }
   }
-  if (arg19) jenv->ReleaseStringUTFChars(jarg19, (const char *)arg19);
+
   return jresult;
 }
 
@@ -49686,7 +49690,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Conic_1VeryGeneral(JNIEnv *jenv, jcla
       delete[] arg12;arg12=0;
     }
   }
-  if (arg19) jenv->ReleaseStringUTFChars(jarg19, (const char *)arg19);
+
   {
     //We musn't free this arg23 input=jarg23 arg=jarg23 result=$result
   }
@@ -52455,7 +52459,7 @@ SWIGEXPORT jint JNICALL Java_safejavaJNI_dgetrs_1BITA(JNIEnv *jenv, jclass jcls,
       arg9=0;
     } 
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   {
     if(arg2){
       delete[] arg2;arg2=0;
@@ -55245,7 +55249,7 @@ SWIGEXPORT jlong JNICALL Java_safejavaJNI_multistage(JNIEnv *jenv, jclass jcls, 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg12, i);
           arg12[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg12[len] = 0;
@@ -55394,9 +55398,9 @@ SWIGEXPORT jlong JNICALL Java_safejavaJNI_multistage(JNIEnv *jenv, jclass jcls, 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg12, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -56840,7 +56844,7 @@ SWIGEXPORT jlong JNICALL Java_safejavaJNI_get_1nfac(JNIEnv *jenv, jclass jcls, j
   }
   result = get_nfac(arg1);
   jresult = (jlong)result; 
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   return jresult;
 }
 
@@ -56878,7 +56882,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getdata(JNIEnv *jenv, jclass jcls, jlon
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -56975,9 +56979,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getdata(JNIEnv *jenv, jclass jcls, jlon
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -57048,7 +57052,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_getdata(JNIEnv *jenv, jclass jcls, jlon
       delete[] arg6;arg6=0;
     }
   }
-  if (arg7) jenv->ReleaseStringUTFChars(jarg7, (const char *)arg7);
+
 }
 
 
@@ -57078,7 +57082,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1stocknames(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg1, i);
           arg1[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg1[len] = 0;
@@ -57110,9 +57114,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1stocknames(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg1, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -57123,7 +57127,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1stocknames(JNIEnv *jenv, jclass jc
       delete[] arg1;arg1=0;
     }
   }
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
 }
 
 
@@ -57141,7 +57145,7 @@ SWIGEXPORT jlong JNICALL Java_safejavaJNI_get_1nstocks(JNIEnv *jenv, jclass jcls
   }
   result = get_nstocks(arg1);
   jresult = (jlong)result; 
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+
   return jresult;
 }
 
@@ -57172,7 +57176,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1factornames(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg1, i);
           arg1[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg1[len] = 0;
@@ -57204,9 +57208,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1factornames(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg1, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -57217,7 +57221,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_get_1factornames(JNIEnv *jenv, jclass j
       delete[] arg1;arg1=0;
     }
   }
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
 }
 
 
@@ -57418,7 +57422,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVP(JNIEnv *jenv, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -57710,9 +57714,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVP(JNIEnv *jenv, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -58053,7 +58057,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcosts(JNIEnv
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -58517,9 +58521,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcosts(JNIEnv
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -58877,7 +58881,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcosts(JNIEnv
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   return jresult;
 }
 
@@ -58983,7 +58987,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostsl(JNIEn
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -59462,9 +59466,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostsl(JNIEn
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -59830,7 +59834,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostsl(JNIEn
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   {
     if(arg64){
       delete[] arg64;arg64=0;
@@ -59942,7 +59946,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSa(JNI
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -60435,9 +60439,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSa(JNI
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -60811,7 +60815,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSa(JNI
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   {
     if(arg64){
       delete[] arg64;arg64=0;
@@ -60930,7 +60934,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaM(JN
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -61441,9 +61445,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaM(JN
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -61828,7 +61832,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaM(JN
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   {
     if(arg64){
       delete[] arg64;arg64=0;
@@ -61954,7 +61958,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMS(J
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -62467,9 +62471,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMS(J
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -62854,7 +62858,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMS(J
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   {
     if(arg64){
       delete[] arg64;arg64=0;
@@ -62988,7 +62992,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMSof
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -63612,9 +63616,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMSof
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -64073,7 +64077,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAextcostslSaMSof
       delete[] arg50;arg50=0;
     }
   }
-  if (arg52) jenv->ReleaseStringUTFChars(jarg52, (const char *)arg52);
+
   {
     if(arg64){
       delete[] arg64;arg64=0;
@@ -64196,7 +64200,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPA(JNIEnv *jenv, 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -64578,9 +64582,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPA(JNIEnv *jenv, 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -64896,7 +64900,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPA(JNIEnv *jenv, 
       delete[] arg43;arg43=0;
     }
   }
-  if (arg45) jenv->ReleaseStringUTFChars(jarg45, (const char *)arg45);
+
   return jresult;
 }
 
@@ -64982,7 +64986,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAF(JNIEnv *jenv,
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -65447,9 +65451,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAF(JNIEnv *jenv,
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -65838,7 +65842,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAF(JNIEnv *jenv,
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   return jresult;
 }
 
@@ -65931,7 +65935,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFb(JNIEnv *jenv
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -66403,9 +66407,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFb(JNIEnv *jenv
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -66794,7 +66798,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFb(JNIEnv *jenv
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   return jresult;
 }
 
@@ -66889,7 +66893,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFbl(JNIEnv *jen
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -67376,9 +67380,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFbl(JNIEnv *jen
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -67775,7 +67779,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFbl(JNIEnv *jen
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -67877,7 +67881,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblQ(JNIEnv *je
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -68392,9 +68396,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblQ(JNIEnv *je
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -68807,7 +68811,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblQ(JNIEnv *je
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -68918,7 +68922,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSa(JNIEnv *j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -69419,9 +69423,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSa(JNIEnv *j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -69826,7 +69830,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSa(JNIEnv *j
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -69934,7 +69938,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaM(JNIEnv *
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -70453,9 +70457,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaM(JNIEnv *
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -70871,7 +70875,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaM(JNIEnv *
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -70986,7 +70990,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMS(JNIEnv 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -71507,9 +71511,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMS(JNIEnv 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -71925,7 +71929,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMS(JNIEnv 
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -72044,7 +72048,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoft(JNIE
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -72634,9 +72638,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoft(JNIE
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -73092,7 +73096,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoft(JNIE
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -73242,7 +73246,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQ(JNI
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -73876,9 +73880,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQ(JNI
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -74358,7 +74362,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQ(JNI
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -74523,7 +74527,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQV(JN
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -75183,9 +75187,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQV(JN
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -75691,7 +75695,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_Optimise_1internalCVPAFblSaMSoftQV(JN
       delete[] arg49;arg49=0;
     }
   }
-  if (arg51) jenv->ReleaseStringUTFChars(jarg51, (const char *)arg51);
+
   {
     if(arg62){
       delete[] arg62;arg62=0;
@@ -75883,7 +75887,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPA(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -76290,9 +76294,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPA(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -76768,7 +76772,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAF(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -77241,9 +77245,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAF(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -77784,7 +77788,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFb(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -78262,9 +78266,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFb(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -78807,7 +78811,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFbl(JNIEnv *jenv, jclass 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -79300,9 +79304,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFbl(JNIEnv *jenv, jclass 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -79860,7 +79864,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFblQ(JNIEnv *jenv, jclass
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -80381,9 +80385,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAFblQ(JNIEnv *jenv, jclass
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -80953,7 +80957,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPF(JNIEnv *jenv, jclass jcl
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -81356,9 +81360,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPF(JNIEnv *jenv, jclass jcl
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -81847,7 +81851,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAextcosts(JNIEnv *jenv, jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -82317,9 +82321,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAextcosts(JNIEnv *jenv, jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -82842,7 +82846,7 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAextcostsl(JNIEnv *jenv, j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg8, i);
           arg8[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg8[len] = 0;
@@ -83327,9 +83331,9 @@ SWIGEXPORT jshort JNICALL Java_safejavaJNI_FrontierCVPAextcostsl(JNIEnv *jenv, j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg8, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -83763,7 +83767,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_PropertiesC(JNIEnv *jenv, jclass jcls, 
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -84140,9 +84144,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_PropertiesC(JNIEnv *jenv, jclass jcls, 
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -84550,7 +84554,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_PropertiesCA(JNIEnv *jenv, jclass jcls,
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -85108,9 +85112,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_PropertiesCA(JNIEnv *jenv, jclass jcls,
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -86074,7 +86078,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtility(JNIEnv *jenv, jclass jc
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -86315,9 +86319,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtility(JNIEnv *jenv, jclass jc
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -86575,7 +86579,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilityb(JNIEnv *jenv, jclass j
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -86817,9 +86821,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilityb(JNIEnv *jenv, jclass j
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -87078,7 +87082,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilitybSa(JNIEnv *jenv, jclass
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -87334,9 +87338,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilitybSa(JNIEnv *jenv, jclass
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -87610,7 +87614,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilitybSaQ(JNIEnv *jenv, jclas
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -87894,9 +87898,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtilitybSaQ(JNIEnv *jenv, jclas
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -88197,7 +88201,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtility_1ext(JNIEnv *jenv, jcla
           
           js = (jstring) jenv->GetObjectArrayElement(jarg3, i);
           arg3[i]=cs = (char *) jenv->GetStringUTFChars(js, &iscopy);
-          //				JCALL2(ReleaseStringUTFChars,jenv,js,cs);//Musn't do it here!
+
           jenv->DeleteLocalRef(js);
         }
         arg3[len] = 0;
@@ -88400,9 +88404,9 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_MarginalUtility_1ext(JNIEnv *jenv, jcla
         if(*col != cs)
         {
           jenv->SetObjectArrayElement(jarg3, i++, jenv->NewStringUTF(*col));
-          jenv->ReleaseStringUTFChars(js, *col);
+
         }
-        jenv->ReleaseStringUTFChars(js, cs);
+
         col++; 
         jenv->DeleteLocalRef(js);
       } 
@@ -89924,7 +89928,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Base_1Optimise_1Version_1set(JNIEnv *je
       arg1->Version = 0;
     }
   }
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
 }
 
 
@@ -89996,7 +90000,7 @@ SWIGEXPORT void JNICALL Java_safejavaJNI_Base_1Optimise_1AddLog(JNIEnv *jenv, jc
     if (!arg2) return ;
   }
   (arg1)->AddLog((char const *)arg2);
-  if (arg2) jenv->ReleaseStringUTFChars(jarg2, (const char *)arg2);
+
 }
 
 
