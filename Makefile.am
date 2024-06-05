@@ -5,17 +5,27 @@ FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==
 licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
 	if test x'$(MY_DLL)' = x'.so'; then \
-	for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
-	if ! test -h $$file; then \
-	echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
-	fi; \
-	done \
+		for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
+		if ! test -h $$file; then \
+		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
+		fi; \
+		done; \
+		for file in lib/*safeqp*$(MY_DLL)*; do \
+		if ! test -h $$file; then \
+		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
+		fi; \
+		done \
 	else \
-	for file in libsafeqp/.libs/*safeqp*$(MY_DLL); do \
-	if ! test -h $$file; then \
-	echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
-	fi; \
-	done \
+		for file in libsafeqp/.libs/*safeqp*$(MY_DLL); do \
+		if ! test -h $$file; then \
+		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+		fi; \
+		done; \
+		for file in lib/*safeqp*$(MY_DLL); do \
+		if ! test -h $$file; then \
+		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+		fi; \
+		done \
 	fi
 licence:
 	make licence1 NOW=$(FINAL)
