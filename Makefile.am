@@ -87,5 +87,11 @@ testconic:
 	if test x'$(MY_DLL)' = x'.so'; then \
 		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd conic/.libs; ./safeconic $$(pwd)/../../data/conic.log) \
 	else \
-		(PATH=$$(pwd)/inst/bin:$$PATH;cd conic/.libs; ./safeconic $$(pwd)/../../data/conic.log) \
+		           (PATH=$$(pwd)/inst/bin:$$PATH;cd conic/.libs; ./safeconic $$(pwd)/../../data/conic.log) \
+	fi
+testsafejava:
+	if test x'$(MY_DLL)' = x'.so'; then \
+	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib:$$(pwd)/../libsafejava/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
+	else \
+	  	            (PATH=$$(pwd)/../libsafeqp/lib:$$(pwd)/../libsafejava/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	fi
