@@ -7,7 +7,7 @@ Summary:        BITA Optimiser
 Group:          BITA
 BuildArch:      x86_64
 License:        GPL
-URL:            www.bita.com
+URL:            www.corfinancialgroup.com
 Source0:        libsafeqp.tgz
 
 %global debug_package %{nil}
