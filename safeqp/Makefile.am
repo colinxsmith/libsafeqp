@@ -1,4 +1,7 @@
-bin_PROGRAMS = safeqp ETL
+bin_PROGRAMS = safeqp ETL logopt
+logopt_SOURCES = logopt.cpp
+logopt_CXXFLAGS = $(MY_DEF) $(MY_STD)
+logopt_LDADD = ../libsafeqp/libsafeqp.la
 safeqp_SOURCES = readin.cpp
 safeqp_CXXFLAGS = $(MY_DEF) $(MY_STD)
 safeqp_LDADD = ../libsafeqp/libsafeqp.la
