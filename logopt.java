@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import com.bitaplus.BitaModel.Optimisation.OptimiserController;
 
-public class compat {
+public class logopt {
     static double[] s2d(String key, HashMap<String, String[]> D) {
         String[] back = D.get(key);
         double[] backd = null;
