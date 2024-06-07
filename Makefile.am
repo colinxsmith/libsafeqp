@@ -97,7 +97,7 @@ testconic:
 	fi
 testsafejava:
 	if test x'$(MY_DLL)' = x'.so'; then \
-	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib:$$(pwd)/../libsafejava/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
+	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	else \
-	  	            (PATH=$$(pwd)/../libsafeqp/lib:$$(pwd)/../libsafejava/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
+	  	            (PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	fi

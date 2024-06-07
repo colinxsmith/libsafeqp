@@ -1,0 +1,2 @@
+ sed "s/libraryname/OptimiserController/" ../safeqp/safe.i > safejava/OptimiserController.i
+ /home/colin/SWIGcvs/SWIG/swig -java -c++ -package com.bitaplus.BitaModel.Optimisation -module OptimiserController -o safejava/OptimiserController_wrap.cpp safejava/OptimiserController.i 
