@@ -7,6 +7,7 @@ AC_CONFIG_SRCDIR(safeqp)
 AC_CONFIG_SRCDIR(testU)
 AC_CONFIG_SRCDIR(conic)
 AC_CONFIG_SRCDIR(safejava)
+AC_CONFIG_SRCDIR(controller)
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
@@ -92,5 +93,5 @@ if test "${res}" != 0 ; then
 fi
 echo $MY_STD
 echo $MY_DEF
-AC_CONFIG_FILES(Makefile safejava/Makefile testsafeqp/Makefile libsafeqp/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
+AC_CONFIG_FILES(Makefile safejava/Makefile testsafeqp/Makefile libsafeqp/Makefile controller/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
 AC_OUTPUT

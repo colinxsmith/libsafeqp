@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava
+SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava controller
 EXTRA_DIST = autogen.sh 
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
@@ -100,4 +100,10 @@ testsafejava:
 	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	else \
 	  	            (PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
+	fi
+testcontroller:
+	if test x'$(MY_DLL)' = x'.so'; then \
+	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd controller;javac logopt.java;java logopt $$(pwd)/../data/logopt.log) \
+	else \
+	                    (PATH=$$(pwd)/../libsafeqp/lib;cd controller;javac logopt.java;java logopt $$(pwd)/../data/logopt.log) \
 	fi
