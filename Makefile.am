@@ -1,6 +1,7 @@
 ACLOCAL_AMFLAGS = -I m4
 SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava controller
 EXTRA_DIST = autogen.sh 
+HERE=$$(pwd)
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
 	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
@@ -50,10 +51,14 @@ dotdeb:
 	rm -rf ~/libsafeqp-d usr
 	make install DESTDIR=$$(pwd)/usr/local 
 	make testlibD
+	echo $(HERE)
+	tar cf - usr/ | pax -r -s "|$(HERE)||"
+	rm -rf usr/local/host
 	tar cf - DEBIAN/ usr/ | (mkdir ~/libsafeqp-d;chmod 755 ~/libsafeqp-d;cd ~/libsafeqp-d;tar xf -)
+	sed -i "s|\$(HERE)||" ~/libsafeqp-d/DEBIAN/md5sums
 	dpkg-deb --build ~/libsafeqp-d
 rpm:
-	make install prefix=$$(pwd)/usr/local
+	make install DESTDIR=$$(pwd)/usr/local
 	(cd usr/local/lib;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
 	(cp -pr RPM/SOURCES ~/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
