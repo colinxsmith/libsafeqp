@@ -53,7 +53,10 @@ dotdeb:
 	make testlibD
 	echo $(HERE)
 	tar cf - usr/ | pax -r -s "|$(HERE)||"
-	rm -rf usr/local/host
+	tree usr
+	echo usr/local$(HERE)
+	rm -rf usr/local$(HERE)
+	tree usr
 	tar cf - DEBIAN/ usr/ | (mkdir ~/libsafeqp-d;chmod 755 ~/libsafeqp-d;cd ~/libsafeqp-d;tar xf -)
 	sed -i "s|\$(HERE)||" ~/libsafeqp-d/DEBIAN/md5sums
 	dpkg-deb --build ~/libsafeqp-d
