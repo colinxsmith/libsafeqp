@@ -52,8 +52,11 @@ dotdeb:
 	rm -rf ~/libsafeqp-d usr
 	make install DESTDIR=$$(pwd)/usr/local 
 	make testlibD
-	tar cf - usr/ | pax -r -s "|$(HERE)||"
-	rm -rf usr/local$(HERE)
+	ls usr/local/$(HERE)
+	cp -rp usr/local/$(HERE)/lib usr/local/lib
+	cp -rp usr/local/$(HERE)/bin usr/local/bin
+#tar cf - usr/ | pax -r -s "|$(HERE)||"
+	rm -rf usr/local/$(HERE)
 	tree usr
 	tar cf - DEBIAN/ usr/ | (mkdir ~/libsafeqp-d;chmod 755 ~/libsafeqp-d;cd ~/libsafeqp-d;tar xf -)
 	sed -i "s|\$(HERE)||" ~/libsafeqp-d/DEBIAN/md5sums
@@ -61,8 +64,11 @@ dotdeb:
 rpm:
 	rm -rf usr
 	make install DESTDIR=$$(pwd)/usr/local
-	tar cf - usr/ | pax -r -s "|$(HERE)||"
-	rm -rf usr/local$(HERE)
+	ls usr/local/$(HERE)
+	cp -rp usr/local/$(HERE)/lib usr/local/lib
+	cp -rp usr/local/$(HERE)/bin usr/local/bin
+#tar cf - usr/ | pax -r -s "|$(HERE)||"
+	rm -rf usr/local/$(HERE)
 	tree usr
 	(cd usr/local/lib;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
