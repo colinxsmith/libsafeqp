@@ -61,6 +61,11 @@ dotdeb:
 	tar cf - DEBIAN/ usr/ | (mkdir ~/libsafeqp-d;chmod 755 ~/libsafeqp-d;cd ~/libsafeqp-d;tar xf -)
 	sed -i "s|\$(HERE)||" ~/libsafeqp-d/DEBIAN/md5sums
 	dpkg-deb --build ~/libsafeqp-d
+installdotdeb:
+	make dotdeb
+	sudo apt install ~/libsafeqp-d.deb
+removedotdeb:
+	sudo apt purge libsafeqp.so
 rpm:
 	rm -rf usr
 	make install DESTDIR=$$(pwd)/usr/local
@@ -78,6 +83,8 @@ installrpm:
 	sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
 	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd testsafeqp/.libs;ldd pversion;./pversion)
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
+removerpm:
+	sudo rpm -e ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
 testsafe:
 	if test x'$(MY_DLL)' = x'.so'; then \
 		(export LD_LIBRARY_PATH=$$(pwd)/inst/lib;cd safeqp/.libs; ./safeqp $$(pwd)/../../data/costlog.log) \
