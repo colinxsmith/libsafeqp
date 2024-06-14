@@ -63,9 +63,9 @@ dotdeb:
 	dpkg-deb --build ~/libsafeqp-d
 installdotdeb:
 	make dotdeb
-	sudo apt install ~/libsafeqp-d.deb
+	sudo dpkg -i ~/libsafeqp-d.deb
 removedotdeb:
-	sudo apt purge libsafeqp.so
+	sudo dpkg -r libsafeqp.so
 rpm:
 	rm -rf usr
 	make install DESTDIR=$$(pwd)/usr/local
