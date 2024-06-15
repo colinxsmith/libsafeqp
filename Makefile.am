@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava controller
+SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava safepython controller
 EXTRA_DIST = autogen.sh 
 HERE=$$(pwd)
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
@@ -121,6 +121,11 @@ testsafejava:
 	else \
 	  	            (PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	fi
+testpython:
+	rm $$(pwd)/safepython/_safe.so
+	ln -s $$(pwd)/lib/libsafe.so.1.0.0 $$(pwd)/safepython/_safe.so
+	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safepython;cp $$(pwd)/../../safeqp/readmylog.py .;cp $$(pwd)/../../safeqp/Optn.py .;python readmylog.py $(TOPPER)/libsafeqp/data/logopt.log)
+
 testcontroller:
 	if test x'$(MY_DLL)' = x'.so'; then \
 	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd controller;javac logopt.java;java logopt $$(pwd)/../data/logopt.log) \

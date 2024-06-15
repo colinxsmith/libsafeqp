@@ -10,3 +10,6 @@ traces.*
 *.a
 *.la
 *.orig
+patch_*
+Makefile
+*.class
