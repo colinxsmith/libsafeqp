@@ -122,7 +122,7 @@ testsafejava:
 	  	            (PATH=$$(pwd)/../libsafeqp/lib;cd safejava;cp $$(pwd)/../../safeqp/compat1.java .;javac *.java;java compat1) \
 	fi
 testpython:
-	rm $$(pwd)/safepython/_safe.so
+	if [ -f safepython/_safe.so ]; then rm safepython/_safe.so;  else echo no; fi
 	ln -s $$(pwd)/lib/libsafe.so.1.0.0 $$(pwd)/safepython/_safe.so
 	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safepython;cp $$(pwd)/../../safeqp/readmylog.py .;cp $$(pwd)/../../safeqp/Optn.py .;python readmylog.py $(TOPPER)/libsafeqp/data/logopt.log)
 testpythonversion:
