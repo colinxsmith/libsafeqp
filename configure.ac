@@ -9,6 +9,7 @@ AC_CONFIG_SRCDIR(conic)
 AC_CONFIG_SRCDIR(safejava)
 AC_CONFIG_SRCDIR(safepython)
 AC_CONFIG_SRCDIR(safeperl)
+AC_CONFIG_SRCDIR(safecsharp)
 AC_CONFIG_SRCDIR(controller)
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE
@@ -95,5 +96,5 @@ if test "${res}" != 0 ; then
 fi
 echo $MY_STD
 echo $MY_DEF
-AC_CONFIG_FILES(Makefile safejava/Makefile testsafeqp/Makefile safepython/Makefile safeperl/Makefile libsafeqp/Makefile controller/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
+AC_CONFIG_FILES(Makefile safejava/Makefile testsafeqp/Makefile safecsharp/Makefile safepython/Makefile safeperl/Makefile libsafeqp/Makefile controller/Makefile safeqp/Makefile testU/Makefile conic/Makefile)
 AC_OUTPUT
