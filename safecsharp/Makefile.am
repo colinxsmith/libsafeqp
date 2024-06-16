@@ -10,7 +10,7 @@ safecsharp_wrap.cpp:	Makefile.am
 	cp ../../safeqp/compat.cs .
 	sed -i "s?//%?%?" safecsharp.i
 	sed -i "s?//\#?\#?" safecsharp.i
-	$(SWIG) -csharp -c++ -module safesharp -o $@ safecsharp.i
+	$(SWIG) -csharp -c++ -module safecsharp -o $@ safecsharp.i
 	sed -i "1iusing System;\nusing System.Runtime.InteropServices;" $(INTERFACE)PINVOKE.cs
 	sed -i "1iusing System;\nusing System.Runtime.InteropServices;" $(INTERFACE).cs
 	mcs -out:compat.exe compat.cs $(INTERFACE).cs $(INTERFACE)PINVOKE.cs
