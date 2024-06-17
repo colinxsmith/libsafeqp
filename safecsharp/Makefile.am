@@ -4,7 +4,7 @@ SWIG=~/SWIGcvs/SWIG/swig
 libsafecsharp_la_SOURCES = safecsharp_wrap.cpp
 libsafecsharp_la_CFLAGS = $(MY_DEF) -I../libsafeqp
 libsafecsharp_la_CXXFLAGS = $(MY_DEF) -I../libsafeqp -std=gnu++11
-libsafecsharp_la_LDFLAGS = -L$(TOPPER)/libsafqp/libsafeqp/.libs -lsafeqp -lgomp -version-info 1:0:0 $(MY_no_undefined) $(MY_netapi32) $(MY_LDEF)
+libsafecsharp_la_LDFLAGS = ../libsafeqp/libsafeqp.la -lgomp -version-info 1:0:0 $(MY_no_undefined) $(MY_netapi32) $(MY_LDEF)
 safecsharp_wrap.cpp:	Makefile.am
 	cp ../../safeqp/safe.i safecsharp.i
 	cp ../../safeqp/compat.cs .
