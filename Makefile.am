@@ -132,7 +132,7 @@ testpythonversion:
 testcsharp:
 	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safecsharp;mono compat.exe)
 testperl:
-	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safeperl;cp $$(pwd)/../../safeqp/readin.pl .; ./readin.pl < ../../libsafeqp/data/logopt.log)
+	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safeperl;cp $$(pwd)/../../safeqp/readin.pl .;chmod 755 readin.pl; ./readin.pl < ../../libsafeqp/data/logopt.log)
 testcontroller:
 	if test x'$(MY_DLL)' = x'.so'; then \
 	  (export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd controller;javac logopt.java;java logopt $$(pwd)/../data/logopt.log) \
