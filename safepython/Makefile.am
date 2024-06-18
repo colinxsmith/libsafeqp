@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libsafe.la
-VER=3.12
+VER=$(ls /usr/include/python* | sed "s/.*thon//")
 SWIG=~/SWIGcvs/SWIG/swig
 libsafe_la_SOURCES = safe_wrap.cpp
 libsafe_la_CFLAGS = $(MY_DEF) -I../libsafeqp  -I/usr/include/python$(VER) -I/usr/include/python$(VER)/config
