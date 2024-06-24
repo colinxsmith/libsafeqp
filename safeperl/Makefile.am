@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libsafepl.la
-INCLUDE=$$(find /usr/lib -name perl.h -print|sed "s|/perl.h||")
+INCLUDE=$$(find /usr -name perl.h -print|sed "s|/perl.h||")
 SWIG=~/SWIGcvs/SWIG/swig
 libsafepl_la_SOURCES = safepl_wrap.cpp
 libsafepl_la_CFLAGS = $(MY_DEF) -I../libsafeqp  -I$(INCLUDE)
