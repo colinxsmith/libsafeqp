@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libsafejava.la
-JAVA=$(JAVA_HOME)/include
+JAVA=$$(find /usr -name jni.h -print | sed "s|/include.*||")/include
 SWIG=~/SWIGcvs/SWIG/swig
 libsafejava_la_SOURCES = safejava_wrap.cpp
 libsafejava_la_CFLAGS = $(MY_DEF) -I../libsafeqp -I$(JAVA) -I$(JAVA)/linux
