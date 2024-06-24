@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libOptimiserController.la
-JAVA=$(JAVA_HOME)/include
+JAVA=$$(find /usr -name jni.h -print | sed "s|/include.*||")/include
 SWIG=~/SWIGcvs/SWIG/swig
 libOptimiserController_la_SOURCES = OptimiserController_wrap.cpp
 libOptimiserController_la_CFLAGS = $(MY_DEF) -I../libsafeqp -I$(JAVA) -I$(JAVA)/linux
