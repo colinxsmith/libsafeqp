@@ -75,7 +75,7 @@ rpm:
 #tar cf - usr/ | pax -r -s "|$(HERE)||"
 	rm -rf usr/local/$(HERE)
 	tree usr
-	(cd usr/local/lib;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
+	(cd usr/local;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
 	(cp -pr RPM/SOURCES ~/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
 installrpm:
