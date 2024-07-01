@@ -77,7 +77,7 @@ rpm:
 	tree usr
 	(cd usr/local;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
-	mkdir ~/rpmbuild && mkdir ~/rpmbuild/SOURCES
+	if ! [ -d ~/rpmbuild ]; then mkdir ~/rpmbuild && mkdir ~/rpmbuild/SOURCES; fi
 	(cp -pr RPM/SOURCES ~/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
 installrpm:
 	make rpm
