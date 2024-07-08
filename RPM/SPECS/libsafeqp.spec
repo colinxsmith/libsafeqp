@@ -98,9 +98,9 @@ ldd $RPM_BUILD_ROOT/usr/local/lib/libsafeqp.so >> ~/rpm`date +-\%d-\%m-\%Y-\%T`
 /usr/local/bin/safeqp
 /usr/local/bin/safeqpU
 %post
-/sbin/ldconfig /usr/local/lib
+echo -e "\e[1;34mInstall step\e[0m"
 %postun
-/sbin/ldconfig
+echo -e "\e[1;33mUninstall step\e[0m"
 %changelog
 * Tue Sep  4 2018 Colin Smith <colin.smith@corfinancialgroup.com> 1.0.0
 - make fedora and centos rpm packages

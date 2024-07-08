@@ -1,4 +1,2 @@
 #!/bin/bash
 echo -e "\e[1;34mInstall step\e[0m"
-echo "ldconfig step"
-/sbin/ldconfig /usr/local/lib
