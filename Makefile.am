@@ -4,27 +4,27 @@ EXTRA_DIST = autogen.sh
 HERE=$$(pwd)
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
-	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101D54 \`date +%d/%m/%Y\` $(NOW)` 1023' | bash
+	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 131019FF \`date +%d/%m/%Y\` $(NOW)` 170' | bash
 	if test x'$(MY_DLL)' = x'.so'; then \
 		for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
+		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 170; \
 		fi; \
 		done; \
 		for file in lib/*safeqp*$(MY_DLL)*; do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 1023; \
+		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 170; \
 		fi; \
 		done \
 	else \
 		for file in libsafeqp/.libs/*safeqp*$(MY_DLL); do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 170; \
 		fi; \
 		done; \
 		for file in lib/*safeqp*$(MY_DLL); do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 13101D54 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 1023; \
+		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 170; \
 		fi; \
 		done \
 	fi
