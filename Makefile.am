@@ -77,12 +77,15 @@ rpm:
 	tree usr
 	(cd usr/local;tar cf - *) | (cd RPM/SOURCES/libsafeqp-1;tar xf -;cd ..;tar czf libsafeqp.tgz libsafeqp-1/*)
 	make testlibr
-	if ! [ -d ~/rpmbuild ]; then mkdir ~/rpmbuild && mkdir ~/rpmbuild/SOURCES; fi
-	(cp -pr RPM/SOURCES ~/rpmbuild;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
+	if ! [ -d ~/rpmbuild ]; then mkdir ~/rpmbuild; fi
+	if ! [ -d ~/rpmbuild/SOURCES ]; then mkdir ~/rpmbuild/SOURCES; fi
+	cp -pr RPM/SOURCES ~/rpmbuild
+	if [ -d /usr/src/packages/SOURCES ]; then cp RPM/SOURCES/libsafeqp.tgz /usr/src/packages/SOURCES; fi
+	(export QA_RPATHS=0x0002;rpmbuild -ba RPM/SPECS/libsafeqp.spec)
 installrpm:
-	make rpm
-	sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
-	(export LD_LIBRARY_PATH=/usr/local/lib;cd testsafeqp/.libs;ldd pversion;./pversion)
+	(export QA_RPATHS=0x0002;make rpm)
+	(export QA_RPATHS=0x0002;sudo rpm -ivh ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm)
+	(export LD_LIBRARY_PATH=/usr/local/lib/libsafeqp-1;cd testsafeqp/.libs;ldd pversion;./pversion)
 	(export LD_LIBRARY_PATH=;cd testsafeqp/.libs;ldd pversion;./pversion)
 removerpm:
 	sudo rpm -e ~/rpmbuild/RPMS/x86_64/libsafeqp-1-0.x86_64.rpm 
