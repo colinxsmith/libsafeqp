@@ -1,30 +1,30 @@
 ACLOCAL_AMFLAGS = -I m4
-SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava safepython safeperl controller safecsharp
+SUBDIRS = libsafeqp testsafeqp safeqp testU conic safejava bitaopt safepython safeperl controller safecsharp
 EXTRA_DIST = autogen.sh 
 HERE=$$(pwd)
 FINAL=$$(date +%Y\ %m\ %d | awk ' {a=$$1;b=$$2;c=$$3;if (b>10) a+=1;else if (b==10&&c>=13) a+=1;print 11"/"10"/"a}')
 licence1:
-	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 131019FF \`date +%d/%m/%Y\` $(NOW)` 170' | bash
+	echo 'validas libsafeqp/.libs/libsafeqp.a `future -b 13101A38 \`date +%d/%m/%Y\` $(NOW)` 227' | bash
 	if test x'$(MY_DLL)' = x'.so'; then \
 		for file in libsafeqp/.libs/*safeqp*$(MY_DLL)*; do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 170; \
+		echo $$file;lic=$$(future -b 13101A38 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 227; \
 		fi; \
 		done; \
 		for file in lib/*safeqp*$(MY_DLL)*; do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 170; \
+		echo $$file;lic=$$(future -b 13101A38 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $(NOW); validas $$file $$lic 227; \
 		fi; \
 		done \
 	else \
 		for file in libsafeqp/.libs/*safeqp*$(MY_DLL); do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 170; \
+		echo $$file;lic=$$(future -b 13101A38 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 227; \
 		fi; \
 		done; \
 		for file in lib/*safeqp*$(MY_DLL); do \
 		if ! test -h $$file; then \
-		echo $$file;lic=$$(future -b 131019FF $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 170; \
+		echo $$file;lic=$$(future -b 13101A38 $$(date +%d/%m/%Y) $$NOW); echo $$lic; echo $$NOW; validas $$file $$lic 227; \
 		fi; \
 		done \
 	fi
