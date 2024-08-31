@@ -129,6 +129,10 @@ testpython:
 	if [ -f safepython/_safe.so ]; then rm safepython/_safe.so;  else echo no; fi
 	ln -s $$(pwd)/lib/libsafe.so.1.0.0 $$(pwd)/safepython/_safe.so
 	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd safepython;cp $$(pwd)/../../safeqp/readmylog.py .;cp $$(pwd)/../../safeqp/Optn.py .;python readmylog.py $(TOPPER)/libsafeqp/data/logopt.log)
+testBITAOPT:
+	if [ -f bitaopt/_BITAOPT.so ]; then rm bitaopt/_BITAOPT.so;  else echo no; fi
+	ln -s $$(pwd)/lib/BITAOPT.so.1.0.0 $$(pwd)/bitaopt/_BITAOPT.so
+	(export LD_LIBRARY_PATH=$$(pwd)/../libsafeqp/lib;cd bitaopt;cp $$(pwd)/../../safeqp/readmylog.py .;sed "s/from safe/from BITAOPT/" $$(pwd)/../../safeqp/Optn.py Optn.py;python readmylog.py $(TOPPER)/libsafeqp/data/logopt.log)
 testpythonversion:
 	rm $$(pwd)/safepython/_safe.so
 	ln -s $$(pwd)/lib/libsafe.so.1.0.0 $$(pwd)/safepython/_safe.so
